@@ -7,7 +7,7 @@ const Collaboration = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            <span className="text-catalyst-blue">Scient Institute of Technology</span> x <span className="text-gradient">Catalyst Club</span>
+            <span className="text-catalyst-blue">Catalyst Club & Scient Institute:</span> <span className="text-gradient">Innovating Together</span>
           </h2>
           <div className="w-24 h-1 bg-gradient-to-r from-catalyst-teal to-catalyst-cyan mx-auto mb-6"></div>
         </div>
@@ -47,7 +47,7 @@ const Collaboration = () => {
           <div className="order-1 lg:order-2">
             <div className="overflow-hidden rounded-xl shadow-lg hover:shadow-xl transition-shadow">
               <img 
-                src="/lovable-uploads/46998a88-48e9-4c86-bc19-aa1c4f29cb9a.png" 
+                src="/lovable-uploads/4baece80-c456-4746-9d49-2c714cd4606c.jpg" 
                 alt="Scient Institute of Technology" 
                 className="w-full h-auto object-cover transform hover:scale-105 transition-transform duration-700"
               />

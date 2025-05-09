@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { Calendar, Clock, MapPin, Info, ArrowRight } from 'lucide-react';
+import FlipCard from './FlipCard';
 
 const Events = () => {
   const [activeTab, setActiveTab] = useState('upcoming');
@@ -14,7 +15,7 @@ const Events = () => {
         date: "Coming Soon",
         time: "TBA",
         location: "Scient Institute of Technology",
-        description: "Build modern websites with UI/UX best practices. Learn from scratch using AI and web tools.",
+        description: "Are you ready to create stunning, user-friendly websites that leave a lasting impression? The Catalyst Club at Scient Institute of Technology is excited to offer a comprehensive Web Designing Course that empowers students to build beautiful and functional websites from scratch.",
         image: "/lovable-uploads/dd365a39-347e-454d-beac-ee6f7b89dec9.png",
         highlights: ["Responsive design", "Modern frameworks", "Hands-on practice", "Certificate on completion"]
       },
@@ -24,7 +25,7 @@ const Events = () => {
         date: "Coming Soon",
         time: "TBA",
         location: "Tech Lab, Scient Institute",
-        description: "Learn data visualization, dashboards, and analytics with hands-on experience. Create AI-powered dashboards and visual reports.",
+        description: "Unlock the power of data with the Beginner Power BI Course at the Catalyst Club. Learn to create interactive dashboards, analyze data efficiently, and build professional visual reports with ease. No prior experience required. Join us for a hands-on learning experience and take your data skills to the next level. Exclusively for Catalyst Club members.",
         image: "/lovable-uploads/228e3c65-f5ff-4a2a-9d44-be96a2feae69.png",
         highlights: ["Data transformation techniques", "AI-powered visuals", "Certificate of completion", "Project-based learning"]
       },
@@ -34,7 +35,7 @@ const Events = () => {
         date: "Coming Soon",
         time: "TBA",
         location: "Innovation Center",
-        description: "Dive into real-world problems using trending tech like AI, IoT, Blockchain, and Web 3. Collaborate with peers in a startup-style environment.",
+        description: "At the Catalyst Club, we believe in turning ideas into impactful solutions through hands-on experience and collaborative learning. Our exclusive projects and workshops are designed to empower students to explore cutting-edge technologies, enhance their skills, and innovate beyond the classroom.",
         image: "/lovable-uploads/7642a797-cb2e-41cf-860e-ef7a9067ab14.png",
         highlights: ["Capstone-style group projects", "Guest sessions by tech professionals", "Hands-on toolkits", "Guided learning"]
       }
@@ -81,55 +82,13 @@ const Events = () => {
         {activeTab === 'upcoming' ? (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {events.upcoming.map((event) => (
-              <div key={event.id} className="event-card bg-white rounded-lg overflow-hidden shadow-md">
-                <div className="h-48 overflow-hidden">
-                  <img 
-                    src={event.image} 
-                    alt={event.title} 
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-                <div className="p-6">
-                  <h3 className="text-xl font-bold mb-3 text-catalyst-blue">{event.title}</h3>
-                  
-                  <div className="space-y-2 mb-4">
-                    <div className="flex items-center text-gray-600">
-                      <Calendar className="h-4 w-4 mr-2 text-catalyst-teal" />
-                      <span className="text-sm">{event.date}</span>
-                    </div>
-                    <div className="flex items-center text-gray-600">
-                      <Clock className="h-4 w-4 mr-2 text-catalyst-teal" />
-                      <span className="text-sm">{event.time}</span>
-                    </div>
-                    <div className="flex items-center text-gray-600">
-                      <MapPin className="h-4 w-4 mr-2 text-catalyst-teal" />
-                      <span className="text-sm">{event.location}</span>
-                    </div>
-                  </div>
-                  
-                  <p className="text-gray-600 text-sm mb-4">{event.description}</p>
-                  
-                  <div className="mb-4">
-                    <h4 className="text-sm font-medium text-gray-700 mb-2 flex items-center">
-                      <Info className="h-4 w-4 mr-1 text-catalyst-cyan" />
-                      Includes:
-                    </h4>
-                    <ul className="grid grid-cols-2 gap-2">
-                      {event.highlights.map((item, index) => (
-                        <li key={index} className="text-xs text-gray-600 flex items-center">
-                          <div className="w-1.5 h-1.5 rounded-full bg-catalyst-teal mr-1.5"></div>
-                          {item}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                  
-                  <Button 
-                    className="w-full bg-catalyst-teal hover:bg-catalyst-blue transition-colors flex items-center justify-center"
-                  >
-                    Know More <ArrowRight className="ml-1 h-4 w-4" />
-                  </Button>
-                </div>
+              <div key={event.id}>
+                <FlipCard
+                  title={event.title}
+                  description={event.description}
+                  image={event.image}
+                  highlights={event.highlights}
+                />
               </div>
             ))}
           </div>

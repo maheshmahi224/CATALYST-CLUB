@@ -22,15 +22,15 @@ const Hero = () => {
       
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 z-10">
         <div className="flex flex-col lg:flex-row items-center">
-          <div className="lg:w-1/2 animate-fade-in">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight mb-4">
-              Catalyst Club – <span className="text-gradient">Something Beyond Academics</span>
+          <div className="lg:w-1/2 animate-fade-in text-center lg:text-left">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight mb-4 text-center">
+              <span className="uppercase">CATALYST CLUB</span>
             </h1>
-            <p className="text-lg md:text-xl text-gray-600 mb-8 max-w-xl">
-              Join a movement, not just a club. We transform ideas into reality at Scient Institute of Technology.
+            <p className="text-lg md:text-xl text-gray-600 mb-8 max-w-xl mx-auto text-center uppercase">
+              SOMETHING BEYOND ACADEMICS
             </p>
             
-            <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+            <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4 justify-center">
               <Button size="lg" className="bg-catalyst-teal hover:bg-catalyst-blue text-white transition-colors">
                 JOIN US NOW <ArrowRight className="ml-2 h-4 w-4" />
               </Button>
@@ -39,14 +39,14 @@ const Hero = () => {
               </Button>
             </div>
             
-            <div className="mt-8 flex items-center space-x-6">
+            <div className="mt-8 flex items-center space-x-6 justify-center">
               <div className="flex -space-x-2">
                 <div className="w-8 h-8 rounded-full bg-gray-200 flex items-center justify-center text-xs font-medium text-gray-800">C</div>
                 <div className="w-8 h-8 rounded-full bg-gray-300 flex items-center justify-center text-xs font-medium text-gray-800">L</div>
                 <div className="w-8 h-8 rounded-full bg-gray-400 flex items-center justify-center text-xs font-medium text-gray-800">U</div>
                 <div className="w-8 h-8 rounded-full bg-gray-500 flex items-center justify-center text-xs font-medium text-white">B</div>
               </div>
-              <span className="text-sm text-gray-500">Join 500+ tech enthusiasts</span>
+              <span className="text-sm text-gray-500">Join us, we started in 2025</span>
             </div>
           </div>
           
