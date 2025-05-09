@@ -15,11 +15,14 @@ const Index = () => {
       anchor.addEventListener('click', function(e) {
         e.preventDefault();
         const targetId = this.getAttribute('href');
+        if (!targetId) return;
+        
         const targetElement = document.querySelector(targetId);
         
         if (targetElement) {
+          const top = targetElement.getBoundingClientRect().top + window.pageYOffset - 80;
           window.scrollTo({
-            top: targetElement.offsetTop - 80, // Offset for navbar
+            top,
             behavior: 'smooth'
           });
         }
@@ -31,8 +34,9 @@ const Index = () => {
       const targetElement = document.querySelector(window.location.hash);
       if (targetElement) {
         setTimeout(() => {
+          const top = targetElement.getBoundingClientRect().top + window.pageYOffset - 80;
           window.scrollTo({
-            top: targetElement.offsetTop - 80,
+            top,
             behavior: 'smooth'
           });
         }, 100);
