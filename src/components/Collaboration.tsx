@@ -47,13 +47,13 @@ const Collaboration = () => {
           <div className="order-1 lg:order-2">
             <div className="overflow-hidden rounded-xl shadow-lg hover:shadow-xl transition-shadow">
               <img 
-                src="/lovable-uploads/4baece80-c456-4746-9d49-2c714cd4606c.jpg" 
-                alt="Scient Institute of Technology" 
+                src="/lovable-uploads/f748a37e-7eff-4e74-b9cd-a598ffb771a9.png" 
+                alt="Scient Institute and Catalyst Club Collaboration" 
                 className="w-full h-auto object-cover transform hover:scale-105 transition-transform duration-700"
               />
               <div className="bg-white p-4">
-                <h4 className="font-medium text-gray-800">Scient Institute of Technology Campus</h4>
-                <p className="text-sm text-gray-500">Our beautiful campus where innovation begins</p>
+                <h4 className="font-medium text-gray-800">SCIENT INSTITUTE OF TECHNOLOGY X CATALYST CLUB</h4>
+                <p className="text-sm text-gray-500">Innovation through collaboration</p>
               </div>
             </div>
           </div>

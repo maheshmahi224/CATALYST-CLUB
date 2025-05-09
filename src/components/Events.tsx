@@ -1,7 +1,7 @@
 
 import React, { useState } from 'react';
 import { Button } from "@/components/ui/button";
-import { Calendar, Clock, MapPin, Info, ArrowRight } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import FlipCard from './FlipCard';
 
 const Events = () => {

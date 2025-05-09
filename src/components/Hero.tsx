@@ -22,7 +22,7 @@ const Hero = () => {
       
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 z-10">
         <div className="flex flex-col lg:flex-row items-center">
-          <div className="lg:w-1/2 animate-fade-in text-center lg:text-left">
+          <div className="lg:w-1/2 animate-fade-in text-center">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight mb-4 text-center">
               <span className="uppercase">CATALYST CLUB</span>
             </h1>
