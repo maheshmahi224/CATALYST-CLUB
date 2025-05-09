@@ -3,8 +3,9 @@ import React, { useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Mail, MapPin, Phone } from 'lucide-react';
+import { Mail, Phone, MapPin, Instagram } from 'lucide-react';
 import { toast } from 'sonner';
+import { motion } from 'framer-motion';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -37,42 +38,82 @@ const Contact = () => {
   
   const contactInfo = [
     {
-      icon: <Mail className="h-5 w-5 text-catalyst-teal" />,
-      title: "Email Us",
-      details: "contact@catalystclub.com",
-      link: "mailto:contact@catalystclub.com"
-    },
-    {
-      icon: <Phone className="h-5 w-5 text-catalyst-teal" />,
+      icon: <Phone className="h-6 w-6 text-white" />,
       title: "Call Us",
-      details: "+91 1234 567 890",
-      link: "tel:+911234567890"
+      details: "+91 7386775532",
+      link: "tel:+917386775532"
     },
     {
-      icon: <MapPin className="h-5 w-5 text-catalyst-teal" />,
+      icon: <Mail className="h-6 w-6 text-white" />,
+      title: "Email Us",
+      details: "catalystclubsnti28@gmail.com",
+      link: "mailto:catalystclubsnti28@gmail.com"
+    },
+    {
+      icon: <Instagram className="h-6 w-6 text-white" />,
+      title: "Follow Us",
+      details: "@CatalystClub",
+      link: "https://instagram.com/catalystclub"
+    },
+    {
+      icon: <MapPin className="h-6 w-6 text-white" />,
       title: "Visit Us",
-      details: "VIT University, Vellore, Tamil Nadu, India",
-      link: "https://maps.google.com"
+      details: "Scient Institute of Technology, Khanapur, Ibrahimpatnam",
+      link: "https://maps.google.com/?q=Scient+Institute+of+Technology+Khanapur+Ibrahimpatnam"
     }
   ];
 
-  return (
-    <section id="contact" className="py-20">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Get in <span className="text-gradient">Touch</span></h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-catalyst-teal to-catalyst-cyan mx-auto mb-6"></div>
-          <p className="max-w-2xl mx-auto text-gray-600">
-            Have questions or want to collaborate? Reach out to us and we'll get back to you as soon as possible.
-          </p>
-        </div>
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1
+      }
+    }
+  };
+  
+  const itemVariants = {
+    hidden: { y: 20, opacity: 0 },
+    visible: {
+      y: 0,
+      opacity: 1,
+      transition: {
+        duration: 0.5
+      }
+    }
+  };
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-          <div className="lg:col-span-2 bg-white rounded-lg shadow-md p-8">
-            <h3 className="text-xl font-bold mb-6 text-catalyst-blue">Send us a message</h3>
+  return (
+    <section id="contact" className="py-20 bg-gradient-to-b from-white to-gray-100 overflow-hidden">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <motion.div 
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          viewport={{ once: true }}
+          className="text-center mb-12"
+        >
+          <h2 className="text-4xl md:text-5xl font-bold mb-4">Talk To <span className="text-gradient">Us</span></h2>
+          <div className="w-24 h-1 bg-gradient-to-r from-catalyst-teal to-catalyst-cyan mx-auto mb-6"></div>
+          <p className="max-w-2xl mx-auto text-gray-600 text-lg">
+            Have questions or want to collaborate? We'd love to hear from you.
+          </p>
+        </motion.div>
+
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
+          {/* Contact Form Section */}
+          <motion.div 
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            className="lg:col-span-7 bg-white rounded-xl shadow-xl p-8"
+          >
+            <motion.h3 variants={itemVariants} className="text-2xl font-bold mb-6 text-catalyst-blue">Send us a message</motion.h3>
             
-            <form onSubmit={handleSubmit}>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-6">
+            <form onSubmit={handleSubmit} className="space-y-6">
+              <motion.div variants={itemVariants} className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                 <div>
                   <label htmlFor="name" className="block mb-2 text-sm font-medium text-gray-700">Your Name</label>
                   <Input
@@ -82,7 +123,7 @@ const Contact = () => {
                     onChange={handleChange}
                     placeholder="John Doe"
                     required
-                    className="w-full"
+                    className="w-full shadow-sm"
                   />
                 </div>
                 <div>
@@ -95,12 +136,12 @@ const Contact = () => {
                     onChange={handleChange}
                     placeholder="john@example.com"
                     required
-                    className="w-full"
+                    className="w-full shadow-sm"
                   />
                 </div>
-              </div>
+              </motion.div>
               
-              <div className="mb-6">
+              <motion.div variants={itemVariants}>
                 <label htmlFor="subject" className="block mb-2 text-sm font-medium text-gray-700">Subject</label>
                 <Input
                   id="subject"
@@ -109,11 +150,11 @@ const Contact = () => {
                   onChange={handleChange}
                   placeholder="How can we help you?"
                   required
-                  className="w-full"
+                  className="w-full shadow-sm"
                 />
-              </div>
+              </motion.div>
               
-              <div className="mb-6">
+              <motion.div variants={itemVariants}>
                 <label htmlFor="message" className="block mb-2 text-sm font-medium text-gray-700">Message</label>
                 <Textarea
                   id="message"
@@ -123,66 +164,157 @@ const Contact = () => {
                   placeholder="Your message here..."
                   rows={5}
                   required
-                  className="w-full"
+                  className="w-full shadow-sm"
                 />
-              </div>
+              </motion.div>
               
-              <Button 
-                type="submit" 
-                className="bg-gradient-to-r from-catalyst-teal to-catalyst-cyan hover:opacity-90 transition-opacity"
-              >
-                Send Message
-              </Button>
+              <motion.div variants={itemVariants}>
+                <Button 
+                  type="submit" 
+                  className="bg-gradient-to-r from-catalyst-teal to-catalyst-cyan hover:opacity-90 transition-opacity px-8 py-3 text-base font-medium"
+                >
+                  Send Message
+                </Button>
+              </motion.div>
             </form>
-          </div>
+          </motion.div>
           
-          <div>
-            <div className="bg-white rounded-lg shadow-md p-8 mb-8">
-              <h3 className="text-xl font-bold mb-6 text-catalyst-blue">Contact Information</h3>
-              
-              <div className="space-y-6">
-                {contactInfo.map((item, index) => (
-                  <div key={index} className="flex">
-                    <div className="flex-shrink-0 mt-1">
-                      {item.icon}
-                    </div>
-                    <div className="ml-4">
-                      <h4 className="text-sm font-medium text-gray-900">{item.title}</h4>
-                      <a 
-                        href={item.link} 
-                        className="text-sm text-gray-600 hover:text-catalyst-teal transition-colors"
-                      >
-                        {item.details}
-                      </a>
-                    </div>
+          {/* Contact Information */}
+          <motion.div 
+            initial={{ opacity: 0, x: 50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            viewport={{ once: true }}
+            className="lg:col-span-5 flex flex-col"
+          >
+            {/* Contact Info Cards */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
+              {contactInfo.map((item, index) => (
+                <motion.a
+                  href={item.link}
+                  key={index}
+                  className="flex flex-col items-center text-center p-6 bg-gradient-to-br from-catalyst-blue to-catalyst-teal rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2"
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.3, delay: 0.1 * index }}
+                  viewport={{ once: true }}
+                >
+                  <div className="w-14 h-14 bg-white/10 rounded-full flex items-center justify-center mb-4">
+                    {item.icon}
                   </div>
-                ))}
-              </div>
+                  <h4 className="text-lg font-bold text-white mb-2">{item.title}</h4>
+                  <p className="text-white/90 font-medium">{item.details}</p>
+                </motion.a>
+              ))}
             </div>
             
-            <div className="bg-white rounded-lg shadow-md p-8">
-              <h3 className="text-xl font-bold mb-6 text-catalyst-blue">Follow Us</h3>
+            {/* Map */}
+            <motion.div 
+              className="flex-1 rounded-xl overflow-hidden shadow-xl"
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              transition={{ duration: 0.5, delay: 0.4 }}
+              viewport={{ once: true }}
+            >
+              <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3810.694038478865!2d78.59641657495277!3d17.245085283824942!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb9c7ec139a01f%3A0xd5d140bbd64548a2!2sScient%20Institute%20of%20Technology!5e0!3m2!1sen!2sin!4v1683650001707!5m2!1sen!2sin" 
+                width="100%" 
+                height="100%" 
+                style={{ border: 0, minHeight: '300px' }} 
+                allowFullScreen={true} 
+                loading="lazy" 
+                referrerPolicy="no-referrer-when-downgrade"
+                title="Scient Institute of Technology Location"
+                className="w-full h-full"
+              ></iframe>
+            </motion.div>
+          </motion.div>
+        </div>
+        
+        {/* Partnership Section */}
+        <motion.div 
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.3 }}
+          viewport={{ once: true }}
+          className="mt-20 bg-white rounded-xl shadow-xl p-8"
+        >
+          <div className="text-center mb-10">
+            <h3 className="text-3xl font-bold mb-4">Catalyst Club & Scient Institute: <span className="text-gradient">Innovating Together</span></h3>
+            <p className="max-w-3xl mx-auto text-gray-600">
+              A partnership driving excellence in education and innovation, creating opportunities for students to excel beyond academics.
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+            <div className="order-2 lg:order-1">
+              <h4 className="text-xl font-semibold mb-4 text-catalyst-blue">Joint Initiatives</h4>
+              <ul className="space-y-4">
+                <motion.li 
+                  className="flex items-start gap-3"
+                  initial={{ opacity: 0, x: -20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.3, delay: 0.1 }}
+                  viewport={{ once: true }}
+                >
+                  <div className="flex-shrink-0 w-6 h-6 rounded-full bg-gradient-to-r from-catalyst-teal to-catalyst-cyan flex items-center justify-center text-white">
+                    1
+                  </div>
+                  <div>
+                    <h5 className="font-medium">Workshops & Training</h5>
+                    <p className="text-gray-600">Regular workshops on cutting-edge technologies and skill development.</p>
+                  </div>
+                </motion.li>
+                <motion.li 
+                  className="flex items-start gap-3"
+                  initial={{ opacity: 0, x: -20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.3, delay: 0.2 }}
+                  viewport={{ once: true }}
+                >
+                  <div className="flex-shrink-0 w-6 h-6 rounded-full bg-gradient-to-r from-catalyst-teal to-catalyst-cyan flex items-center justify-center text-white">
+                    2
+                  </div>
+                  <div>
+                    <h5 className="font-medium">Industry Connections</h5>
+                    <p className="text-gray-600">Building bridges between students and industry professionals.</p>
+                  </div>
+                </motion.li>
+                <motion.li 
+                  className="flex items-start gap-3"
+                  initial={{ opacity: 0, x: -20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.3, delay: 0.3 }}
+                  viewport={{ once: true }}
+                >
+                  <div className="flex-shrink-0 w-6 h-6 rounded-full bg-gradient-to-r from-catalyst-teal to-catalyst-cyan flex items-center justify-center text-white">
+                    3
+                  </div>
+                  <div>
+                    <h5 className="font-medium">Research & Development</h5>
+                    <p className="text-gray-600">Collaborative projects that solve real-world problems.</p>
+                  </div>
+                </motion.li>
+              </ul>
               
-              <div className="flex space-x-4">
-                <a href="#" className="w-10 h-10 bg-catalyst-teal/10 rounded-full flex items-center justify-center hover:bg-catalyst-teal hover:text-white transition-colors">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-catalyst-teal"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
-                </a>
-                <a href="#" className="w-10 h-10 bg-catalyst-teal/10 rounded-full flex items-center justify-center hover:bg-catalyst-teal hover:text-white transition-colors">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-catalyst-teal"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line></svg>
-                </a>
-                <a href="#" className="w-10 h-10 bg-catalyst-teal/10 rounded-full flex items-center justify-center hover:bg-catalyst-teal hover:text-white transition-colors">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-catalyst-teal"><path d="M22 4.01c-1 .49-1.98.689-3 .99-1.121-1.265-2.783-1.335-4.38-.737S11.977 6.323 12 8v1c-3.245.083-6.135-1.395-8-4 0 0-4.182 7.433 4 11-1.872 1.247-3.739 2.088-6 2 3.308 1.803 6.913 2.423 10.034 1.517 3.58-1.04 6.522-3.723 7.651-7.742a13.84 13.84 0 0 0 .497-3.753C20.18 7.773 21.692 5.25 22 4.009z"></path></svg>
-                </a>
-                <a href="#" className="w-10 h-10 bg-catalyst-teal/10 rounded-full flex items-center justify-center hover:bg-catalyst-teal hover:text-white transition-colors">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-catalyst-teal"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect width="4" height="12" x="2" y="9"></rect><circle cx="4" cy="4" r="2"></circle></svg>
-                </a>
-                <a href="#" className="w-10 h-10 bg-catalyst-teal/10 rounded-full flex items-center justify-center hover:bg-catalyst-teal hover:text-white transition-colors">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-catalyst-teal"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"></path><path d="M9 18c-4.51 2-5-2-7-2"></path></svg>
-                </a>
+              <Button className="mt-6 bg-gradient-to-r from-catalyst-blue to-catalyst-teal hover:opacity-90 transition-opacity">
+                Get Involved
+              </Button>
+            </div>
+            
+            <div className="order-1 lg:order-2 flex justify-center">
+              <div className="relative w-full max-w-md">
+                <div className="absolute -top-4 -left-4 w-24 h-24 bg-gradient-to-r from-catalyst-teal to-catalyst-cyan rounded-full opacity-30 animate-pulse"></div>
+                <div className="absolute -bottom-4 -right-4 w-32 h-32 bg-gradient-to-r from-catalyst-blue to-catalyst-teal rounded-full opacity-20 animate-pulse delay-700"></div>
+                <img 
+                  src="/lovable-uploads/dd365a39-347e-454d-beac-ee6f7b89dec9.png" 
+                  alt="Scient Institute of Technology and Catalyst Club Collaboration" 
+                  className="relative z-10 rounded-lg shadow-lg w-full object-cover"
+                />
               </div>
             </div>
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );
