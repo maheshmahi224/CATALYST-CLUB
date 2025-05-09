@@ -4,24 +4,24 @@ import React from 'react';
 const About = () => {
   const features = [
     { 
-      title: 'Innovation Hub', 
-      description: 'A space where ideas transform into impactful solutions through collaborative efforts.',
+      title: 'Workshops & Training', 
+      description: 'AI, Web Development, Blockchain, IoT and other emerging technologies.',
       icon: '💡'
     },
     { 
-      title: 'Skill Development', 
-      description: 'Workshops, training sessions, and hands-on projects to enhance technical skills.',
+      title: 'Real-World Projects', 
+      description: 'Work on practical projects with real-world applications and impact.',
       icon: '🚀'
     },
     { 
-      title: 'Networking', 
-      description: 'Connect with industry professionals, alumni, and like-minded peers.',
-      icon: '🌐'
+      title: '75+ AI Tools Access', 
+      description: 'Get access to premium AI tools to enhance your learning and projects.',
+      icon: '🤖'
     },
     { 
-      title: 'Competitions', 
-      description: 'Participate in hackathons, coding contests, and technical challenges.',
-      icon: '🏆'
+      title: 'Skill Development', 
+      description: 'Communication, Leadership, Problem-solving beyond technical skills.',
+      icon: '🌟'
     },
   ];
 
@@ -32,21 +32,29 @@ const About = () => {
           <h2 className="text-3xl md:text-4xl font-bold mb-4">About <span className="text-gradient">Catalyst Club</span></h2>
           <div className="w-24 h-1 bg-gradient-to-r from-catalyst-teal to-catalyst-cyan mx-auto mb-6"></div>
           <p className="max-w-2xl mx-auto text-gray-600">
-            Catalyst Club is the premier technical club at VIT University, dedicated to fostering innovation and technical excellence among students.
+            Welcome to the Catalyst Club at Scient Institute of Technology, where curiosity meets innovation!
           </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           <div className="flex flex-col space-y-6">
-            <h3 className="text-2xl font-bold text-catalyst-blue">Our Mission</h3>
             <p className="text-gray-600">
-              Our mission is to catalyze innovation by providing a platform for students to explore, learn, and implement cutting-edge technologies while developing leadership and teamwork skills essential for professional growth.
+              Catalyst Club is more than just a platform—it's a movement designed to inspire, educate, and empower students to explore the realms of technology, creativity, and self-development beyond the boundaries of traditional academics.
             </p>
             
-            <h3 className="text-2xl font-bold text-catalyst-blue">Our Vision</h3>
-            <p className="text-gray-600">
-              To be the leading technical community that transforms passionate students into skilled professionals and innovation leaders of tomorrow.
-            </p>
+            <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+              <h3 className="text-xl font-bold text-catalyst-blue mb-2">Our Mission</h3>
+              <p className="text-gray-600">
+                To bridge the gap between classroom learning and real-world applications, fostering innovation, collaboration, and problem-solving skills.
+              </p>
+            </div>
+            
+            <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+              <h3 className="text-xl font-bold text-catalyst-blue mb-2">Our Vision</h3>
+              <p className="text-gray-600">
+                To cultivate future-ready individuals through innovation, collaboration, and lifelong learning who can thrive in a rapidly evolving technological landscape.
+              </p>
+            </div>
             
             <div className="pt-4">
               <div className="flex items-center space-x-4">

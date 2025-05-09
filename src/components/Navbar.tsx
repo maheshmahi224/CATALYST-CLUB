@@ -25,7 +25,6 @@ const Navbar = () => {
     { name: 'Home', href: '#home' },
     { name: 'About', href: '#about' },
     { name: 'Events', href: '#events' },
-    { name: 'Team', href: '#team' },
     { name: 'Contact', href: '#contact' },
   ];
   
@@ -39,6 +38,11 @@ const Navbar = () => {
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center">
             <a href="#home" className="flex items-center">
+              <img 
+                src="/lovable-uploads/e2f7c36a-f301-4db2-a896-4e0433b137a4.png"
+                alt="Catalyst Club Logo"
+                className="h-10 w-auto mr-2"
+              />
               <span className="text-xl font-bold text-catalyst-blue">
                 CATALYST<span className="text-catalyst-teal">CLUB</span>
               </span>

@@ -4,7 +4,9 @@ import Navbar from '@/components/Navbar';
 import Hero from '@/components/Hero';
 import About from '@/components/About';
 import Events from '@/components/Events';
-import Team from '@/components/Team';
+import Certification from '@/components/Certification';
+import ClubIntroduction from '@/components/ClubIntroduction';
+import Collaboration from '@/components/Collaboration';
 import Contact from '@/components/Contact';
 import Footer from '@/components/Footer';
 
@@ -50,8 +52,10 @@ const Index = () => {
       <main>
         <Hero />
         <About />
+        <Certification />
+        <ClubIntroduction />
+        <Collaboration />
         <Events />
-        <Team />
         <Contact />
       </main>
       <Footer />

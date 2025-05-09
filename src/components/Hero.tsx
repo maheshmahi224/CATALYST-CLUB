@@ -24,18 +24,18 @@ const Hero = () => {
         <div className="flex flex-col lg:flex-row items-center">
           <div className="lg:w-1/2 animate-fade-in">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight mb-4">
-              Innovate. Create. <span className="text-gradient">Catalyze.</span>
+              Catalyst Club – <span className="text-gradient">Something Beyond Academics</span>
             </h1>
             <p className="text-lg md:text-xl text-gray-600 mb-8 max-w-xl">
-              Join the community of tech enthusiasts at VIT University where innovation meets opportunity. We transform ideas into reality.
+              Join a movement, not just a club. We transform ideas into reality at Scient Institute of Technology.
             </p>
             
             <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
               <Button size="lg" className="bg-catalyst-teal hover:bg-catalyst-blue text-white transition-colors">
-                Explore Events <ArrowRight className="ml-2 h-4 w-4" />
+                JOIN US NOW <ArrowRight className="ml-2 h-4 w-4" />
               </Button>
               <Button size="lg" variant="outline" className="border-catalyst-teal text-catalyst-teal hover:bg-catalyst-teal hover:text-white transition-all">
-                Join Our Community
+                Learn More
               </Button>
             </div>
             
@@ -54,10 +54,10 @@ const Hero = () => {
             <div className="relative">
               {/* Main hero image with animation */}
               <div className="w-72 h-72 md:w-96 md:h-96 rounded-full bg-gradient-to-tr from-catalyst-blue to-catalyst-teal p-1 animate-pulse-glow shadow-xl">
-                <div className="w-full h-full bg-white rounded-full flex items-center justify-center overflow-hidden">
+                <div className="w-full h-full bg-white rounded-full flex items-center justify-center overflow-hidden p-6">
                   <img 
-                    src="/placeholder.svg" 
-                    alt="Catalyst Club" 
+                    src="/lovable-uploads/e2f7c36a-f301-4db2-a896-4e0433b137a4.png" 
+                    alt="Catalyst Club Logo" 
                     className="w-5/6 h-5/6 object-contain"
                   />
                 </div>
