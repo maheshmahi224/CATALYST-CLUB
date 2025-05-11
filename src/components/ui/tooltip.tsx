@@ -4,8 +4,11 @@ import * as TooltipPrimitive from "@radix-ui/react-tooltip"
 
 import { cn } from "@/lib/utils"
 
-// Define the provider as a proper functional component
-const TooltipProvider = ({ children, ...props }) => {
+// Define the provider as a proper functional component with correct TypeScript types
+const TooltipProvider: React.FC<React.ComponentPropsWithoutRef<typeof TooltipPrimitive.Provider>> = ({ 
+  children,
+  ...props 
+}) => {
   return <TooltipPrimitive.Provider {...props}>{children}</TooltipPrimitive.Provider>
 }
 
