@@ -58,6 +58,19 @@ const Collaboration = () => {
             </div>
           </div>
         </div>
+        
+        {/* College Campus Section */}
+        <div className="mt-16 text-center">
+          <h3 className="text-2xl font-bold text-gray-800 mb-6">Our Campus</h3>
+          <div className="max-w-4xl mx-auto overflow-hidden rounded-xl shadow-lg">
+            <img 
+              src="/lovable-uploads/46998a88-48e9-4c86-bc19-aa1c4f29cb9a.png" 
+              alt="Scient Institute of Technology Campus" 
+              className="w-full h-auto object-cover transform hover:scale-105 transition-transform duration-700"
+            />
+          </div>
+          <p className="mt-4 text-gray-600">The home of innovation and excellence - Scient Institute of Technology</p>
+        </div>
       </div>
     </section>
   );
