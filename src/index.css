@@ -1,3 +1,4 @@
+
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
 
 @tailwind base;
@@ -145,5 +146,47 @@
 
   .rotate-y-180 {
     transform: rotateY(180deg);
+  }
+  
+  /* Glow text effect */
+  .glow-text {
+    text-shadow: 0 0 10px rgba(6, 182, 212, 0.5), 0 0 20px rgba(6, 182, 212, 0.3);
+  }
+  
+  /* Dark mode specific glow text */
+  .dark .glow-text {
+    text-shadow: 0 0 10px rgba(6, 182, 212, 0.7), 0 0 20px rgba(6, 182, 212, 0.5);
+  }
+}
+
+@layer utilities {
+  /* Animation utilities */
+  .animate-fade-in {
+    opacity: 0;
+    animation: fadeIn 0.8s ease-in-out forwards;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .animate-pulse-glow {
+    animation: pulseGlow 2s infinite;
+  }
+  
+  @keyframes pulseGlow {
+    0%, 100% {
+      filter: drop-shadow(0 0 5px rgba(6, 182, 212, 0.5));
+    }
+    50% {
+      filter: drop-shadow(0 0 15px rgba(6, 182, 212, 0.8));
+    }
   }
 }
