@@ -4,6 +4,7 @@ import Navbar from '@/components/Navbar';
 import Hero from '@/components/Hero';
 import About from '@/components/About';
 import Events from '@/components/Events';
+import Gallery from '@/components/Gallery';
 import ClubIntroduction from '@/components/ClubIntroduction';
 import Collaboration from '@/components/Collaboration';
 import Contact from '@/components/Contact';
@@ -46,7 +47,7 @@ const Index = () => {
   }, []);
   
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-white dark:bg-gray-950">
       <Navbar />
       <main>
         <Hero />
@@ -54,6 +55,7 @@ const Index = () => {
         <Collaboration />
         <ClubIntroduction />
         <Events />
+        <Gallery />
         <Contact />
       </main>
       <Footer />
