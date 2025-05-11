@@ -1,15 +1,14 @@
 
 import React, { useState, useEffect } from 'react';
-import { Menu, X, Sun, Moon } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import { Button } from "@/components/ui/button";
 import { Link } from 'react-router-dom';
-import { Toggle } from "@/components/ui/toggle";
 import { useTheme } from './ThemeProvider';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
-  const { theme, toggleTheme } = useTheme();
+  const { theme } = useTheme();
   
   useEffect(() => {
     const handleScroll = () => {
@@ -63,14 +62,6 @@ const Navbar = () => {
                   {item.name}
                 </a>
               ))}
-              <Toggle 
-                pressed={theme === 'dark'} 
-                onPressedChange={toggleTheme}
-                className="mr-4 p-2 bg-gray-100 dark:bg-gray-800 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700"
-                aria-label="Toggle theme"
-              >
-                {theme === 'dark' ? <Sun size={16} /> : <Moon size={16} />}
-              </Toggle>
               <Button 
                 className="bg-gradient-to-r from-catalyst-teal to-catalyst-cyan hover:opacity-90 transition-opacity"
               >
@@ -79,15 +70,7 @@ const Navbar = () => {
             </div>
           </div>
           
-          <div className="md:hidden flex items-center space-x-4">
-            <Toggle 
-              pressed={theme === 'dark'} 
-              onPressedChange={toggleTheme}
-              className="p-2 bg-gray-100 dark:bg-gray-800 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700"
-              aria-label="Toggle theme"
-            >
-              {theme === 'dark' ? <Sun size={16} /> : <Moon size={16} />}
-            </Toggle>
+          <div className="md:hidden flex items-center">
             <button
               onClick={() => setIsOpen(!isOpen)}
               className="inline-flex items-center justify-center p-2 rounded-md text-gray-700 dark:text-gray-300 hover:text-catalyst-teal focus:outline-none"
