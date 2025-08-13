@@ -26,15 +26,15 @@ const Hero = () => {
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight mb-4 text-center">
               <span className="uppercase">CATALYST CLUB</span>
             </h1>
-            <p className="text-lg md:text-xl text-gray-600 mb-8 max-w-xl mx-auto text-center uppercase">
-              SOMETHING BEYOND ACADEMICS
+            <p className="text-lg md:text-xl text-gray-600 mb-8 max-w-xl mx-auto text-center uppercase animate-fade-in glow-text" style={{ animationDelay: '0.3s' }}>
+              BRINGING TECH CLOSE TO YOU
             </p>
             
-            <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4 justify-center">
-              <Button size="lg" className="bg-catalyst-teal hover:bg-catalyst-blue text-white transition-colors">
+            <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4 justify-center animate-fade-in" style={{ animationDelay: '0.5s' }}>
+              <Button size="lg" className="bg-catalyst-teal hover:bg-catalyst-blue text-white transition-all duration-300 hover:scale-105 hover:shadow-lg">
                 JOIN US NOW <ArrowRight className="ml-2 h-4 w-4" />
               </Button>
-              <Button size="lg" variant="outline" className="border-catalyst-teal text-catalyst-teal hover:bg-catalyst-teal hover:text-white transition-all">
+              <Button size="lg" variant="outline" className="border-catalyst-teal text-catalyst-teal hover:bg-catalyst-teal hover:text-white transition-all duration-300 hover:scale-105">
                 Learn More
               </Button>
             </div>
