@@ -7,6 +7,7 @@ import Events from '@/components/Events';
 import Gallery from '@/components/Gallery';
 import ClubIntroduction from '@/components/ClubIntroduction';
 import Collaboration from '@/components/Collaboration';
+import Team from '@/components/Team';
 import Contact from '@/components/Contact';
 import Footer from '@/components/Footer';
 
@@ -56,6 +57,7 @@ const Index = () => {
         <ClubIntroduction />
         <Events />
         <Gallery />
+        <Team />
         <Contact />
       </main>
       <Footer />

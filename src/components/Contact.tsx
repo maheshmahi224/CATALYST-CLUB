@@ -49,6 +49,7 @@ const Contact = () => {
                     size="lg"
                     variant="outline" 
                     className="border-catalyst-teal text-catalyst-teal hover:bg-catalyst-teal hover:text-white mt-2"
+                    onClick={() => window.open('https://www.instagram.com/catalystclub_official?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==', '_blank')}
                   >
                     Follow @CatalystClub
                   </Button>
