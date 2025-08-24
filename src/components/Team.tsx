@@ -86,7 +86,7 @@ const Team = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Mahesh & Team Section */}
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Mahesh & <span className="text-gradient glow-text animate-pulse">Team</span></h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">OUR <span className="text-gradient glow-text animate-pulse">TEAM</span></h2>
           <div className="w-24 h-1 bg-gradient-to-r from-catalyst-teal to-catalyst-cyan mx-auto mb-6"></div>
           <p className="max-w-2xl mx-auto text-gray-600 dark:text-gray-300 animate-fade-in">
             Meet the passionate individuals behind Catalyst Club who work tirelessly to create opportunities for the tech community.
