@@ -20,7 +20,7 @@ const Team = () => {
 
   const teamMembers = [
     {
-      name: "Bharghavi",
+      name: "Bhargavi",
       position: "Event and Program Coordinator",
       image: "/lovable-uploads/dad6bc18-eeeb-4e03-96ad-10b9d4a803ad.png",
       bio: "Organizing impactful events and programs to bring the tech community together.",
