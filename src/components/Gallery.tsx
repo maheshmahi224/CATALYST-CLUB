@@ -16,7 +16,7 @@ const Gallery = () => {
   
   // Placeholder images - these will be replaced later
   const images = [
-    { id: 1, src: "https://via.placeholder.com/800x500?text=Gallery+Image+1", alt: "Gallery Image 1" },
+    { id: 1, src: "https://drive.google.com/file/d/100179sIErNcSzXJ2DV7OiYiH4Of9R66Y/view?usp=drive_link" },
     { id: 2, src: "https://via.placeholder.com/800x500?text=Gallery+Image+2", alt: "Gallery Image 2" },
     { id: 3, src: "https://via.placeholder.com/800x500?text=Gallery+Image+3", alt: "Gallery Image 3" },
     { id: 4, src: "https://via.placeholder.com/800x500?text=Gallery+Image+4", alt: "Gallery Image 4" },
