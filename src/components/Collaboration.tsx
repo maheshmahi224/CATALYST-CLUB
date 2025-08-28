@@ -59,8 +59,58 @@ const Collaboration = () => {
           </div>
         </div>
         
+        {/* Faculty Leadership Section */}
+        <div className="mt-16">
+          <h3 className="text-2xl font-bold text-gray-800 mb-8 text-center">Leadership Excellence</h3>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+            {/* Principal Card */}
+            <div className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
+              <div className="p-6">
+                <div className="flex flex-col items-center text-center">
+                  <div className="w-32 h-32 rounded-full overflow-hidden mb-4 shadow-lg">
+                    <img 
+                      src="/lovable-uploads/ee3fa4d2-b3db-4aa4-b7f6-5ab9e7568d9d.png" 
+                      alt="Dr. G. Anil Kumar - Principal" 
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                  <h4 className="text-xl font-bold text-catalyst-blue mb-2">Dr. G. ANIL KUMAR</h4>
+                  <p className="text-catalyst-teal font-semibold mb-3">Principal</p>
+                  <p className="text-gray-600 text-sm leading-relaxed">
+                    Dr. G. Anil Kumar is a distinguished academician who graduated from Osmania University. 
+                    He holds an excellent academic record and earned his Master's in Software Engineering 
+                    from Jawaharlal Nehru Technological University (JNTU), Hyderabad, Telangana.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* HOD Card */}
+            <div className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
+              <div className="p-6">
+                <div className="flex flex-col items-center text-center">
+                  <div className="w-32 h-32 rounded-full overflow-hidden mb-4 shadow-lg">
+                    <img 
+                      src="/lovable-uploads/0a17c86e-3e14-4adb-8482-afd26803d366.png" 
+                      alt="Dr. A. Balaram - HOD CSE" 
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                  <h4 className="text-xl font-bold text-catalyst-blue mb-2">Dr. A. BALARAM</h4>
+                  <p className="text-catalyst-teal font-semibold mb-3">Head of Department - CSE</p>
+                  <p className="text-gray-600 text-sm leading-relaxed">
+                    Dr. A. Balaram, currently working as a Professor in the Dept. of Computer Science and Engineering 
+                    at SCIENT Institute of Technology, Hyderabad, Telangana. He obtained his B.Tech (CSE) from JNTUH University, 
+                    M.Tech from JNTUA University Anantapur and Ph.D. from JNTUA University Anantapur, India.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
         {/* College Campus Section */}
-        <div className="mt-16 text-center">
+        <div className="text-center">
           <h3 className="text-2xl font-bold text-gray-800 mb-6">Our Campus</h3>
           <div className="max-w-4xl mx-auto overflow-hidden rounded-xl shadow-lg">
             <img 
