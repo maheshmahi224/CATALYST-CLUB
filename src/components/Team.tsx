@@ -58,7 +58,7 @@ const Team = () => {
     {
       name: "Sunny",
       position: "SEO & Social Media Coordinator",
-      image: "/lovable-uploads/f094f6fe-1a34-4f0b-8e57-90b993d399e6.png",
+      image: "/lovable-uploads/625c59c6-6ddd-450e-a49c-4992b3308bf2.png",
       bio: "Boosting online presence and engaging the community through digital platforms.",
       social: {
         linkedin: "#",
