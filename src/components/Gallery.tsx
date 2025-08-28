@@ -1,5 +1,5 @@
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import {
   Carousel,
   CarouselContent,
@@ -14,19 +14,22 @@ import { Card } from "@/components/ui/card";
 const Gallery = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   
-  // Placeholder images - these will be replaced later
+  // Gallery images from Catalyst Club events
   const images = [
-    { id: 1, src: "https://drive.google.com/file/d/100179sIErNcSzXJ2DV7OiYiH4Of9R66Y/view?usp=drive_link" },
-    { id: 2, src: "https://via.placeholder.com/800x500?text=Gallery+Image+2", alt: "Gallery Image 2" },
-    { id: 3, src: "https://via.placeholder.com/800x500?text=Gallery+Image+3", alt: "Gallery Image 3" },
-    { id: 4, src: "https://via.placeholder.com/800x500?text=Gallery+Image+4", alt: "Gallery Image 4" },
-    { id: 5, src: "https://via.placeholder.com/800x500?text=Gallery+Image+5", alt: "Gallery Image 5" },
-    { id: 6, src: "https://via.placeholder.com/800x500?text=Gallery+Image+6", alt: "Gallery Image 6" },
-    { id: 7, src: "https://via.placeholder.com/800x500?text=Gallery+Image+7", alt: "Gallery Image 7" },
-    { id: 8, src: "https://via.placeholder.com/800x500?text=Gallery+Image+8", alt: "Gallery Image 8" },
-    { id: 9, src: "https://via.placeholder.com/800x500?text=Gallery+Image+9", alt: "Gallery Image 9" },
-    { id: 10, src: "https://via.placeholder.com/800x500?text=Gallery+Image+10", alt: "Gallery Image 10" },
+    { id: 1, src: "/lovable-uploads/fac5799b-4217-4aac-9660-f925a3be0c24.png", alt: "Catalyst Club Workshop Session" },
+    { id: 2, src: "/lovable-uploads/056e0d21-9902-43d9-a733-91333d2d9638.png", alt: "Interactive Learning Environment" },
+    { id: 3, src: "/lovable-uploads/4ce3e485-6e85-4f2e-a272-5acd39a9d465.png", alt: "Hands-on Training Session" },
+    { id: 4, src: "/lovable-uploads/487e7b16-e716-4cce-b889-4e6732c6a502.png", alt: "Catalyst Club Presentation" },
   ];
+
+  // Auto-slide functionality
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentSlide((prev) => (prev === images.length - 1 ? 0 : prev + 1));
+    }, 3000); // Change slide every 3 seconds
+
+    return () => clearInterval(interval);
+  }, [images.length]);
 
   // Handle manual navigation
   const goToPrevious = () => {
@@ -49,22 +52,40 @@ const Gallery = () => {
         </div>
 
         <div className="max-w-5xl mx-auto">
-          <Carousel className="w-full">
-            <CarouselContent>
+          <div className="relative overflow-hidden rounded-lg shadow-2xl">
+            <div 
+              className="flex transition-transform duration-500 ease-in-out"
+              style={{ transform: `translateX(-${currentSlide * 100}%)` }}
+            >
               {images.map((image, index) => (
-                <CarouselItem key={image.id}>
-                  <Card className="border-0 shadow-lg overflow-hidden">
-                    <div className="aspect-[16/9] relative">
-                      <img 
-                        src={image.src} 
-                        alt={image.alt} 
-                        className="w-full h-full object-cover"
-                      />
-                    </div>
-                  </Card>
-                </CarouselItem>
+                <div key={image.id} className="w-full flex-shrink-0">
+                  <div className="aspect-[16/9] relative">
+                    <img 
+                      src={image.src} 
+                      alt={image.alt} 
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                </div>
               ))}
-            </CarouselContent>
+            </div>
+            
+            {/* Slide indicators */}
+            <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
+              {images.map((_, index) => (
+                <button
+                  key={index}
+                  className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                    index === currentSlide 
+                      ? 'bg-white scale-110' 
+                      : 'bg-white/50 hover:bg-white/75'
+                  }`}
+                  onClick={() => setCurrentSlide(index)}
+                  aria-label={`Go to slide ${index + 1}`}
+                />
+              ))}
+            </div>
+          </div>
             <div className="flex justify-center mt-6 space-x-4">
               <Button 
                 variant="outline" 
@@ -85,7 +106,6 @@ const Gallery = () => {
                 <ArrowRight className="h-5 w-5" />
               </Button>
             </div>
-          </Carousel>
         </div>
       </div>
     </section>
