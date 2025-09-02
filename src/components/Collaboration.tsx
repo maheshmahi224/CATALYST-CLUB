@@ -75,7 +75,7 @@ const Collaboration = () => {
                     />
                   </div>
                   <h4 className="text-xl font-bold text-catalyst-blue mb-2">Dr. G. ANIL KUMAR</h4>
-                  <p className="text-catalyst-teal font-semibold mb-3">Principal</p>
+                  <p className="text-catalyst-teal font-semibold mb-3">CHAIRPERSON</p>
                   <p className="text-gray-600 text-sm leading-relaxed">
                     Dr. G. Anil Kumar is a distinguished academician who graduated from Osmania University. 
                     He holds an excellent academic record and earned his Master's in Software Engineering 
@@ -97,7 +97,7 @@ const Collaboration = () => {
                     />
                   </div>
                   <h4 className="text-xl font-bold text-catalyst-blue mb-2">Dr. A. BALARAM</h4>
-                  <p className="text-catalyst-teal font-semibold mb-3">Head of Department - CSE</p>
+                  <p className="text-catalyst-teal font-semibold mb-3">VICE CHAIRPERSON</p>
                   <p className="text-gray-600 text-sm leading-relaxed">
                     Dr. A. Balaram, currently working as a Professor in the Dept. of Computer Science and Engineering 
                     at SCIENT Institute of Technology, Hyderabad, Telangana. He obtained his B.Tech (CSE) from JNTUH University, 
