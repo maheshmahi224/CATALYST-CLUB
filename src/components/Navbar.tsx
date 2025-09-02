@@ -65,6 +65,7 @@ const Navbar = () => {
               ))}
               <Button 
                 className="bg-gradient-to-r from-catalyst-teal to-catalyst-cyan hover:opacity-90 transition-opacity"
+                onClick={() => window.open('https://docs.google.com/forms/d/e/1FAIpQLSfsHPgxAR_tCcRkTxK27A9m3lt5CFR3eTEKpbZ58nqKAgd0KA/viewform?usp=dialog', '_blank')}
               >
                 Join Us
               </Button>
@@ -97,6 +98,7 @@ const Navbar = () => {
           ))}
           <Button 
             className="w-full mt-2 bg-gradient-to-r from-catalyst-teal to-catalyst-cyan hover:opacity-90 transition-opacity"
+            onClick={() => window.open('https://docs.google.com/forms/d/e/1FAIpQLSfsHPgxAR_tCcRkTxK27A9m3lt5CFR3eTEKpbZ58nqKAgd0KA/viewform?usp=dialog', '_blank')}
           >
             Join Us
           </Button>

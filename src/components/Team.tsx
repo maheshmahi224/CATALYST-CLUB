@@ -175,7 +175,10 @@ const Team = () => {
         
         <div className="text-center mt-12 animate-fade-in" style={{animationDelay: "0.6s"}}>
           <p className="text-gray-600 dark:text-gray-300 mb-4">Want to be part of our dynamic team?</p>
-          <button className="px-6 py-2 bg-gradient-to-r from-catalyst-teal to-catalyst-cyan text-white rounded-md hover:opacity-90 transition-opacity">
+          <button 
+            className="px-6 py-2 bg-gradient-to-r from-catalyst-teal to-catalyst-cyan text-white rounded-md hover:opacity-90 transition-opacity"
+            onClick={() => window.open('https://docs.google.com/forms/d/e/1FAIpQLSfsHPgxAR_tCcRkTxK27A9m3lt5CFR3eTEKpbZ58nqKAgd0KA/viewform?usp=dialog', '_blank')}
+          >
             Join Our Team
           </button>
         </div>
