@@ -30,12 +30,13 @@ const Hero = () => {
               BRINGING TECH CLOSE TO YOU
             </p>
             
-            <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4 justify-center animate-fade-in" style={{ animationDelay: '0.5s' }}>
-              <Button size="lg" className="bg-catalyst-teal hover:bg-catalyst-blue text-white transition-all duration-300 hover:scale-105 hover:shadow-lg">
-                JOIN US NOW <ArrowRight className="ml-2 h-4 w-4" />
-              </Button>
-              <Button size="lg" variant="outline" className="border-catalyst-teal text-catalyst-teal hover:bg-catalyst-teal hover:text-white transition-all duration-300 hover:scale-105">
-                Learn More
+            <div className="flex justify-center animate-fade-in" style={{ animationDelay: '0.5s' }}>
+              <Button 
+                size="lg" 
+                className="bg-catalyst-teal hover:bg-catalyst-blue text-white transition-all duration-300 hover:scale-105 hover:shadow-lg"
+                onClick={() => window.open('https://docs.google.com/forms/d/e/1FAIpQLScWURMQXIJJO0htqohoo6uAndWuRaM1sVHVG61MOOHnNkUf9w/viewform?usp=dialog', '_blank')}
+              >
+                COLLABORATE WITH US <ArrowRight className="ml-2 h-4 w-4" />
               </Button>
             </div>
             
