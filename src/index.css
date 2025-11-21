@@ -148,14 +148,14 @@
     transform: rotateY(180deg);
   }
   
-  /* Glow text effect - reduced intensity */
+  /* Glow text effect - increased intensity */
   .glow-text {
-    text-shadow: 0 0 3px rgba(6, 182, 212, 0.2), 0 0 6px rgba(6, 182, 212, 0.1);
+    text-shadow: 0 0 5px rgba(6, 182, 212, 0.6), 0 0 10px rgba(6, 182, 212, 0.4), 0 0 15px rgba(6, 182, 212, 0.2);
   }
   
-  /* Dark mode specific glow text - reduced intensity */
+  /* Dark mode specific glow text - increased intensity */
   .dark .glow-text {
-    text-shadow: 0 0 3px rgba(6, 182, 212, 0.3), 0 0 6px rgba(6, 182, 212, 0.2);
+    text-shadow: 0 0 5px rgba(6, 182, 212, 0.8), 0 0 10px rgba(6, 182, 212, 0.6), 0 0 20px rgba(6, 182, 212, 0.4);
   }
   
   /* Hover scale animation */
