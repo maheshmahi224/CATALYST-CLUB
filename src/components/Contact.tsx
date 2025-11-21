@@ -1,22 +1,34 @@
-
 import React from 'react';
 import { Phone, Mail, MapPin, Instagram } from 'lucide-react';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
+import { motion } from 'framer-motion';
 
 const Contact = () => {
   return (
     <section id="contact" className="py-20 bg-gradient-to-b from-gray-50 to-white overflow-hidden">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
+        <motion.div 
+          className="text-center mb-16"
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+        >
           <h2 className="text-3xl md:text-4xl font-bold mb-4">Talk To <span className="text-gradient">Us</span></h2>
           <div className="w-24 h-1 bg-gradient-to-r from-catalyst-teal to-catalyst-cyan mx-auto mb-6"></div>
           <p className="max-w-2xl mx-auto text-gray-600">
             Have questions or want to join the Catalyst Club? We'd love to hear from you!
           </p>
-        </div>
+        </motion.div>
 
-        <div className="max-w-4xl mx-auto">
+        <motion.div 
+          className="max-w-4xl mx-auto"
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+        >
           <div className="space-y-8">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <Card className="overflow-hidden hover:shadow-lg transition-shadow transform hover:scale-105 duration-300">
@@ -114,7 +126,7 @@ const Contact = () => {
               </div>
             </form>
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

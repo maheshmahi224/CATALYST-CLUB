@@ -1,6 +1,7 @@
 
 import React from 'react';
 import { Github, Linkedin, Mail, Instagram } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 const Team = () => {
   const maheshTeam = [
@@ -42,42 +43,6 @@ const Team = () => {
         email: "mailto:tharak@catalystclub.com",
         instagram: "https://www.instagram.com/tharak___varma143?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
       }
-    },
-    {
-      name: "Sai Teja",
-      position: "Programmes and Modules Designer",
-      image: "/lovable-uploads/5a89cc97-6bbd-4744-b368-d12889e54556.png",
-      bio: "Designing comprehensive learning modules and innovative tech programs.",
-      social: {
-        linkedin: "#",
-        github: "#",
-        email: "mailto:saiteja@catalystclub.com",
-        instagram: "https://www.instagram.com/nvsaiteja06/"
-      }
-    },
-    {
-      name: "Sunny",
-      position: "SEO & Social Media Coordinator",
-      image: "/lovable-uploads/625c59c6-6ddd-450e-a49c-4992b3308bf2.png",
-      bio: "Boosting online presence and engaging the community through digital platforms.",
-      social: {
-        linkedin: "#",
-        github: "#",
-        email: "mailto:sunny@catalystclub.com",
-        instagram: "https://www.instagram.com/krupakar.18?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
-      }
-    },
-    {
-      name: "Bharat",
-      position: "Social Media Coordinator",
-      image: "/lovable-uploads/d63ce74e-5f05-4f01-911a-d12d10b4a27a.png",
-      bio: "Creating engaging content and managing social media presence for the club.",
-      social: {
-        linkedin: "#",
-        github: "#",
-        email: "mailto:bharat@catalystclub.com",
-        instagram: "https://www.instagram.com/itzbharathh?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
-      }
     }
   ];
 
@@ -85,16 +50,28 @@ const Team = () => {
     <section id="team" className="py-20 bg-gray-50 dark:bg-gray-900 transition-colors duration-300">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Mahesh & Team Section */}
-        <div className="text-center mb-16">
+        <motion.div 
+          className="text-center mb-16"
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+        >
           <h2 className="text-3xl md:text-4xl font-bold mb-4">OUR <span className="text-gradient glow-text animate-pulse">TEAM</span></h2>
           <div className="w-24 h-1 bg-gradient-to-r from-catalyst-teal to-catalyst-cyan mx-auto mb-6"></div>
           <p className="max-w-2xl mx-auto text-gray-600 dark:text-gray-300 animate-fade-in">
             Meet the passionate individuals behind Catalyst Club who work tirelessly to create opportunities for the tech community.
           </p>
-        </div>
+        </motion.div>
 
         {/* Mahesh Card */}
-        <div className="flex justify-center mb-16">
+        <motion.div 
+          className="flex justify-center mb-16"
+          initial={{ opacity: 0, scale: 0.9 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+        >
           {maheshTeam.map((member, index) => (
             <div 
               key={index} 
@@ -131,10 +108,16 @@ const Team = () => {
               </div>
             </div>
           ))}
-        </div>
+        </motion.div>
 
         {/* Team Members Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        <motion.div 
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8"
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.4 }}
+        >
           {teamMembers.map((member, index) => (
             <div 
               key={index} 
@@ -171,9 +154,16 @@ const Team = () => {
               </div>
             </div>
           ))}
-        </div>
+        </motion.div>
         
-        <div className="text-center mt-12 animate-fade-in" style={{animationDelay: "0.6s"}}>
+        <motion.div 
+          className="text-center mt-12 animate-fade-in" 
+          style={{animationDelay: "0.6s"}}
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.6 }}
+        >
           <p className="text-gray-600 dark:text-gray-300 mb-4">Want to be part of our dynamic team?</p>
           <button 
             className="px-6 py-2 bg-gradient-to-r from-catalyst-teal to-catalyst-cyan text-white rounded-md hover:opacity-90 transition-opacity"
@@ -181,7 +171,7 @@ const Team = () => {
           >
             Join Our Team
           </button>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

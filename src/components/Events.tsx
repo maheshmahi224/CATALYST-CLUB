@@ -1,8 +1,8 @@
-
 import React, { useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from 'lucide-react';
 import FlipCard from './FlipCard';
+import { motion } from 'framer-motion';
 
 const Events = () => {
   const [activeTab, setActiveTab] = useState('upcoming');
@@ -46,13 +46,19 @@ const Events = () => {
   return (
     <section id="events" className="py-20">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16 animate-fade-in">
+        <motion.div 
+          className="text-center mb-16"
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+        >
           <h2 className="text-3xl md:text-4xl font-bold mb-4">MODULE 1 - <span className="text-gradient glow-text">VIBE CODING</span></h2>
           <div className="w-24 h-1 bg-gradient-to-r from-catalyst-teal to-catalyst-cyan mx-auto mb-6 animate-pulse-glow"></div>
-          <p className="max-w-2xl mx-auto text-gray-600 animate-fade-in" style={{ animationDelay: '0.2s' }}>
+          <p className="max-w-2xl mx-auto text-gray-600">
             Explore our exciting lineup of workshops, courses, and projects designed to enhance your skills and expand your knowledge.
           </p>
-        </div>
+        </motion.div>
 
         <div className="flex justify-center mb-8">
           <div className="inline-flex bg-gray-100 rounded-lg p-1">
@@ -80,12 +86,21 @@ const Events = () => {
         </div>
 
         {activeTab === 'upcoming' ? (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <motion.div 
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
             {events.upcoming.map((event, index) => (
-              <div 
-                key={event.id} 
-                className="animate-fade-in hover-scale"
-                style={{ animationDelay: `${index * 0.1}s` }}
+              <motion.div 
+                key={event.id}
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                className="hover-scale"
               >
                 <FlipCard
                   title={event.title}
@@ -93,9 +108,9 @@ const Events = () => {
                   image={event.image}
                   highlights={event.highlights}
                 />
-              </div>
+              </motion.div>
             ))}
-          </div>
+          </motion.div>
         ) : (
           <div className="bg-white rounded-lg shadow-md p-10 text-center">
             <div className="animate-pulse">

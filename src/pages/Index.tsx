@@ -1,7 +1,7 @@
 
 import React, { useEffect } from 'react';
 import Navbar from '@/components/Navbar';
-import Hero from '@/components/Hero';
+import ShaderHero from '@/components/ShaderHero';
 import About from '@/components/About';
 import Events from '@/components/Events';
 import Gallery from '@/components/Gallery';
@@ -10,6 +10,7 @@ import Collaboration from '@/components/Collaboration';
 import Team from '@/components/Team';
 import Contact from '@/components/Contact';
 import Footer from '@/components/Footer';
+import { DockNav } from '@/components/DockNav';
 
 const Index = () => {
   useEffect(() => {
@@ -51,7 +52,7 @@ const Index = () => {
     <div className="min-h-screen bg-white dark:bg-gray-950">
       <Navbar />
       <main>
-        <Hero />
+        <ShaderHero />
         <About />
         <Collaboration />
         <ClubIntroduction />
@@ -61,6 +62,7 @@ const Index = () => {
         <Contact />
       </main>
       <Footer />
+      <DockNav />
     </div>
   );
 };
