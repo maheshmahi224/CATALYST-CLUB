@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 
 const Collaboration = () => {
   return (
-    <section className="py-20 bg-gradient-to-b from-gray-50 to-white">
+    <section className="py-20 bg-gradient-to-b from-gray-900 to-gray-800">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div 
           className="text-center mb-16"
@@ -26,8 +26,8 @@ const Collaboration = () => {
           transition={{ duration: 0.6, delay: 0.2 }}
         >
           <div className="order-2 lg:order-1">
-            <h3 className="text-2xl font-bold text-gray-800 mb-6">A Powerful Collaboration</h3>
-            <p className="text-gray-600 mb-6">
+            <h3 className="text-2xl font-bold text-gray-100 mb-6">A Powerful Collaboration</h3>
+            <p className="text-gray-300 mb-6">
               Scient Institute of Technology proudly collaborates with Catalyst Club, a pioneering initiative to equip students with innovation, creativity, and essential skills to thrive in a technological world.
             </p>
             
@@ -35,22 +35,22 @@ const Collaboration = () => {
               <div className="flex items-start">
                 <div className="flex-shrink-0 h-6 w-6 rounded-full bg-catalyst-teal flex items-center justify-center text-white font-bold text-sm">1</div>
                 <div className="ml-4">
-                  <h4 className="text-lg font-semibold text-gray-800">Institutional Support</h4>
-                  <p className="text-sm text-gray-600">Full backing from the college administration for club activities and initiatives.</p>
+                  <h4 className="text-lg font-semibold text-gray-100">Institutional Support</h4>
+                  <p className="text-sm text-gray-300">Full backing from the college administration for club activities and initiatives.</p>
                 </div>
               </div>
               <div className="flex items-start">
                 <div className="flex-shrink-0 h-6 w-6 rounded-full bg-catalyst-cyan flex items-center justify-center text-white font-bold text-sm">2</div>
                 <div className="ml-4">
-                  <h4 className="text-lg font-semibold text-gray-800">Resource Sharing</h4>
-                  <p className="text-sm text-gray-600">Access to college infrastructure, labs, and technical resources.</p>
+                  <h4 className="text-lg font-semibold text-gray-100">Resource Sharing</h4>
+                  <p className="text-sm text-gray-300">Access to college infrastructure, labs, and technical resources.</p>
                 </div>
               </div>
               <div className="flex items-start">
                 <div className="flex-shrink-0 h-6 w-6 rounded-full bg-catalyst-blue flex items-center justify-center text-white font-bold text-sm">3</div>
                 <div className="ml-4">
-                  <h4 className="text-lg font-semibold text-gray-800">Academic Integration</h4>
-                  <p className="text-sm text-gray-600">Club activities complement the academic curriculum for holistic education.</p>
+                  <h4 className="text-lg font-semibold text-gray-100">Academic Integration</h4>
+                  <p className="text-sm text-gray-300">Club activities complement the academic curriculum for holistic education.</p>
                 </div>
             </div>
           </div>
@@ -63,9 +63,9 @@ const Collaboration = () => {
                 alt="Scient Institute and Catalyst Club Collaboration" 
                 className="w-full h-auto object-cover transform hover:scale-105 transition-transform duration-700"
               />
-              <div className="bg-white p-4">
-                <h4 className="font-medium text-gray-800">SCIENT INSTITUTE OF TECHNOLOGY X CATALYST CLUB</h4>
-                <p className="text-sm text-gray-500">Innovation through collaboration</p>
+              <div className="bg-gray-800 p-4">
+                <h4 className="font-medium text-gray-100">SCIENT INSTITUTE OF TECHNOLOGY X CATALYST CLUB</h4>
+                <p className="text-sm text-gray-400">Innovation through collaboration</p>
               </div>
             </div>
           </div>
@@ -73,10 +73,10 @@ const Collaboration = () => {
         
         {/* Faculty Leadership Section */}
         <div className="mt-16">
-          <h3 className="text-2xl font-bold text-gray-800 mb-8 text-center">Leadership Excellence</h3>
+          <h3 className="text-2xl font-bold text-gray-100 mb-8 text-center">Leadership Excellence</h3>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
             {/* Principal Card */}
-            <div className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
+            <div className="bg-gray-800 rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
               <div className="p-6">
                 <div className="flex flex-col items-center text-center">
                   <div className="w-32 h-32 rounded-full overflow-hidden mb-4 shadow-lg">
@@ -88,7 +88,7 @@ const Collaboration = () => {
                   </div>
                   <h4 className="text-xl font-bold text-catalyst-blue mb-2">Dr. G. ANIL KUMAR</h4>
                   <p className="text-catalyst-teal font-semibold mb-3">CHAIRPERSON</p>
-                  <p className="text-gray-600 text-sm leading-relaxed">
+                  <p className="text-gray-300 text-sm leading-relaxed">
                     Dr. G. Anil Kumar is a distinguished academician who graduated from Osmania University. 
                     He holds an excellent academic record and earned his Master's in Software Engineering 
                     from Jawaharlal Nehru Technological University (JNTU), Hyderabad, Telangana.
@@ -98,7 +98,7 @@ const Collaboration = () => {
             </div>
 
             {/* HOD Card */}
-            <div className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
+            <div className="bg-gray-800 rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
               <div className="p-6">
                 <div className="flex flex-col items-center text-center">
                   <div className="w-32 h-32 rounded-full overflow-hidden mb-4 shadow-lg">
@@ -110,7 +110,7 @@ const Collaboration = () => {
                   </div>
                   <h4 className="text-xl font-bold text-catalyst-blue mb-2">Dr. A. BALARAM</h4>
                   <p className="text-catalyst-teal font-semibold mb-3">VICE CHAIRPERSON</p>
-                  <p className="text-gray-600 text-sm leading-relaxed">
+                  <p className="text-gray-300 text-sm leading-relaxed">
                     Dr. A. Balaram, currently working as a Professor in the Dept. of Computer Science and Engineering 
                     at SCIENT Institute of Technology, Hyderabad, Telangana. He obtained his B.Tech (CSE) from JNTUH University, 
                     M.Tech from JNTUA University Anantapur and Ph.D. from JNTUA University Anantapur, India.
@@ -123,7 +123,7 @@ const Collaboration = () => {
 
         {/* College Campus Section */}
         <div className="text-center">
-          <h3 className="text-2xl font-bold text-gray-800 mb-6">Our Campus</h3>
+          <h3 className="text-2xl font-bold text-gray-100 mb-6">Our Campus</h3>
           <div className="max-w-4xl mx-auto overflow-hidden rounded-xl shadow-lg">
             <img 
               src="/lovable-uploads/46998a88-48e9-4c86-bc19-aa1c4f29cb9a.png" 
@@ -131,7 +131,7 @@ const Collaboration = () => {
               className="w-full h-auto object-cover transform hover:scale-105 transition-transform duration-700"
             />
           </div>
-          <p className="mt-4 text-gray-600">The home of innovation and excellence - Scient Institute of Technology</p>
+          <p className="mt-4 text-gray-300">The home of innovation and excellence - Scient Institute of Technology</p>
         </div>
       </div>
     </section>

@@ -47,7 +47,7 @@ const Team = () => {
   ];
 
   return (
-    <section id="team" className="py-20 bg-gray-50 dark:bg-gray-900 transition-colors duration-300">
+    <section id="team" className="py-20 bg-gray-900 transition-colors duration-300">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Mahesh & Team Section */}
         <motion.div 
@@ -59,7 +59,7 @@ const Team = () => {
         >
           <h2 className="text-3xl md:text-4xl font-bold mb-4">OUR <span className="text-gradient glow-text animate-pulse">TEAM</span></h2>
           <div className="w-24 h-1 bg-gradient-to-r from-catalyst-teal to-catalyst-cyan mx-auto mb-6"></div>
-          <p className="max-w-2xl mx-auto text-gray-600 dark:text-gray-300 animate-fade-in">
+          <p className="max-w-2xl mx-auto text-gray-300 animate-fade-in">
             Meet the passionate individuals behind Catalyst Club who work tirelessly to create opportunities for the tech community.
           </p>
         </motion.div>
@@ -75,7 +75,7 @@ const Team = () => {
           {maheshTeam.map((member, index) => (
             <div 
               key={index} 
-              className="bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-md card-hover animate-fade-in max-w-sm"
+              className="bg-gray-800 rounded-xl overflow-hidden shadow-md card-hover animate-fade-in max-w-sm"
               style={{animationDelay: `${0.2 * index}s`}}
             >
               <div className="relative h-60 overflow-hidden group">
@@ -102,9 +102,9 @@ const Team = () => {
                 </div>
               </div>
               <div className="p-6">
-                <h3 className="text-lg font-bold text-catalyst-blue dark:text-catalyst-cyan glow-text">{member.name}</h3>
+                <h3 className="text-lg font-bold text-catalyst-cyan glow-text">{member.name}</h3>
                 <p className="text-sm text-catalyst-teal font-medium mb-2">{member.position}</p>
-                <p className="text-sm text-gray-600 dark:text-gray-300">{member.bio}</p>
+                <p className="text-sm text-gray-300">{member.bio}</p>
               </div>
             </div>
           ))}
@@ -121,7 +121,7 @@ const Team = () => {
           {teamMembers.map((member, index) => (
             <div 
               key={index} 
-              className="bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-md card-hover animate-fade-in hover-scale"
+              className="bg-gray-800 rounded-xl overflow-hidden shadow-md card-hover animate-fade-in hover-scale"
               style={{animationDelay: `${0.2 * index}s`}}
             >
               <div className="relative h-60 overflow-hidden group">
@@ -148,9 +148,9 @@ const Team = () => {
                 </div>
               </div>
               <div className="p-6">
-                <h3 className="text-lg font-bold text-catalyst-blue dark:text-catalyst-cyan glow-text">{member.name}</h3>
+                <h3 className="text-lg font-bold text-catalyst-cyan glow-text">{member.name}</h3>
                 <p className="text-sm text-catalyst-teal font-medium mb-2">{member.position}</p>
-                <p className="text-sm text-gray-600 dark:text-gray-300">{member.bio}</p>
+                <p className="text-sm text-gray-300">{member.bio}</p>
               </div>
             </div>
           ))}
@@ -164,7 +164,7 @@ const Team = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.6 }}
         >
-          <p className="text-gray-600 dark:text-gray-300 mb-4">Want to be part of our dynamic team?</p>
+          <p className="text-gray-300 mb-4">Want to be part of our dynamic team?</p>
           <button 
             className="px-6 py-2 bg-gradient-to-r from-catalyst-teal to-catalyst-cyan text-white rounded-md hover:opacity-90 transition-opacity"
             onClick={() => window.open('https://docs.google.com/forms/d/e/1FAIpQLSfsHPgxAR_tCcRkTxK27A9m3lt5CFR3eTEKpbZ58nqKAgd0KA/viewform?usp=dialog', '_blank')}

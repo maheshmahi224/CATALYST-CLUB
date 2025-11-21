@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 
 const ClubIntroduction = () => {
   return (
-    <section className="py-20 bg-white dark:bg-gray-900 transition-colors duration-300">
+    <section className="py-20 bg-gray-900 transition-colors duration-300">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div 
           className="text-center mb-16"
@@ -38,8 +38,8 @@ const ClubIntroduction = () => {
             </div>
             
             <div className="md:w-2/3 md:pl-8">
-              <h3 className="text-2xl font-bold text-gray-800 dark:text-gray-100 mb-4 glow-text animate-fade-in">Mahesh - Lead Coordinator</h3>
-              <p className="text-gray-600 dark:text-gray-300 mb-4 animate-fade-in" style={{animationDelay: "0.2s"}}>
+              <h3 className="text-2xl font-bold text-gray-100 mb-4 glow-text animate-fade-in">Mahesh - Lead Coordinator</h3>
+              <p className="text-gray-300 mb-4 animate-fade-in" style={{animationDelay: "0.2s"}}>
                 As students of Scient Institute of Technology, we are driven by a mission to empower peers by bridging academics with real-world innovation, skills, and growth.
               </p>
               <div className="flex flex-wrap gap-2 animate-fade-in" style={{animationDelay: "0.4s"}}>
@@ -58,26 +58,26 @@ const ClubIntroduction = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.4, staggerChildren: 0.2 }}
           >
-            <div className="bg-gray-50 dark:bg-gray-800 rounded-xl p-6 hover:shadow-md transition-shadow animate-fade-in hover:-translate-y-1 hover:shadow-lg transition-all duration-300">
+            <div className="bg-gray-800 rounded-xl p-6 hover:shadow-md transition-shadow animate-fade-in hover:-translate-y-1 hover:shadow-lg transition-all duration-300">
               <Users className="h-8 w-8 text-catalyst-teal mb-4" />
-              <h4 className="text-xl font-semibold mb-2 dark:text-gray-100">Collaborative Team</h4>
-              <p className="text-gray-600 dark:text-gray-300 text-sm">
+              <h4 className="text-xl font-semibold mb-2 text-gray-100">Collaborative Team</h4>
+              <p className="text-gray-300 text-sm">
                 Our dedicated team brings diverse skills and perspectives to every project and initiative.
               </p>
             </div>
             
-            <div className="bg-gray-50 dark:bg-gray-800 rounded-xl p-6 hover:shadow-md transition-shadow animate-fade-in hover:-translate-y-1 hover:shadow-lg transition-all duration-300" style={{animationDelay: "0.2s"}}>
+            <div className="bg-gray-800 rounded-xl p-6 hover:shadow-md transition-shadow animate-fade-in hover:-translate-y-1 hover:shadow-lg transition-all duration-300" style={{animationDelay: "0.2s"}}>
               <Lightbulb className="h-8 w-8 text-catalyst-teal mb-4" />
-              <h4 className="text-xl font-semibold mb-2 dark:text-gray-100">Innovative Thinking</h4>
-              <p className="text-gray-600 dark:text-gray-300 text-sm">
+              <h4 className="text-xl font-semibold mb-2 text-gray-100">Innovative Thinking</h4>
+              <p className="text-gray-300 text-sm">
                 We foster a culture of creative problem-solving and out-of-the-box approaches.
               </p>
             </div>
             
-            <div className="bg-gray-50 dark:bg-gray-800 rounded-xl p-6 hover:shadow-md transition-shadow animate-fade-in hover:-translate-y-1 hover:shadow-lg transition-all duration-300" style={{animationDelay: "0.4s"}}>
+            <div className="bg-gray-800 rounded-xl p-6 hover:shadow-md transition-shadow animate-fade-in hover:-translate-y-1 hover:shadow-lg transition-all duration-300" style={{animationDelay: "0.4s"}}>
               <Target className="h-8 w-8 text-catalyst-teal mb-4" />
-              <h4 className="text-xl font-semibold mb-2 dark:text-gray-100">Goal-Oriented</h4>
-              <p className="text-gray-600 dark:text-gray-300 text-sm">
+              <h4 className="text-xl font-semibold mb-2 text-gray-100">Goal-Oriented</h4>
+              <p className="text-gray-300 text-sm">
                 Our initiatives are designed with clear objectives and measurable outcomes.
               </p>
             </div>

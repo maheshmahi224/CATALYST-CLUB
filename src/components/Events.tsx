@@ -44,7 +44,7 @@ const Events = () => {
   };
 
   return (
-    <section id="events" className="py-20">
+    <section id="events" className="py-20 bg-gray-900">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div 
           className="text-center mb-16"
@@ -55,19 +55,19 @@ const Events = () => {
         >
           <h2 className="text-3xl md:text-4xl font-bold mb-4">MODULE 1 - <span className="text-gradient glow-text">VIBE CODING</span></h2>
           <div className="w-24 h-1 bg-gradient-to-r from-catalyst-teal to-catalyst-cyan mx-auto mb-6 animate-pulse-glow"></div>
-          <p className="max-w-2xl mx-auto text-gray-600">
+          <p className="max-w-2xl mx-auto text-gray-300">
             Explore our exciting lineup of workshops, courses, and projects designed to enhance your skills and expand your knowledge.
           </p>
         </motion.div>
 
         <div className="flex justify-center mb-8">
-          <div className="inline-flex bg-gray-100 rounded-lg p-1">
+          <div className="inline-flex bg-gray-800 rounded-lg p-1">
             <button
               onClick={() => setActiveTab('upcoming')}
               className={`px-4 py-2 rounded-md text-sm font-medium transition-all ${
                 activeTab === 'upcoming'
-                  ? 'bg-white shadow-md text-catalyst-blue'
-                  : 'text-gray-500 hover:text-catalyst-teal'
+                  ? 'bg-gray-700 shadow-md text-catalyst-cyan'
+                  : 'text-gray-400 hover:text-catalyst-teal'
               }`}
             >
               Upcoming Events
@@ -76,8 +76,8 @@ const Events = () => {
               onClick={() => setActiveTab('past')}
               className={`px-4 py-2 rounded-md text-sm font-medium transition-all ${
                 activeTab === 'past'
-                  ? 'bg-white shadow-md text-catalyst-blue'
-                  : 'text-gray-500 hover:text-catalyst-teal'
+                  ? 'bg-gray-700 shadow-md text-catalyst-cyan'
+                  : 'text-gray-400 hover:text-catalyst-teal'
               }`}
             >
               Past Events
@@ -112,14 +112,14 @@ const Events = () => {
             ))}
           </motion.div>
         ) : (
-          <div className="bg-white rounded-lg shadow-md p-10 text-center">
+          <div className="bg-gray-800 rounded-lg shadow-md p-10 text-center">
             <div className="animate-pulse">
-              <div className="w-16 h-16 mx-auto rounded-full bg-gradient-to-r from-gray-200 to-gray-300"></div>
-              <div className="h-4 w-36 mx-auto bg-gray-200 rounded mt-4"></div>
-              <div className="h-3 w-48 mx-auto bg-gray-200 rounded mt-2"></div>
+              <div className="w-16 h-16 mx-auto rounded-full bg-gradient-to-r from-gray-700 to-gray-600"></div>
+              <div className="h-4 w-36 mx-auto bg-gray-700 rounded mt-4"></div>
+              <div className="h-3 w-48 mx-auto bg-gray-700 rounded mt-2"></div>
             </div>
-            <h3 className="text-xl font-medium text-gray-700 mt-6">Past Events Coming Soon</h3>
-            <p className="text-gray-500 mt-2">
+            <h3 className="text-xl font-medium text-gray-300 mt-6">Past Events Coming Soon</h3>
+            <p className="text-gray-400 mt-2">
               Check back later for our archive of past events and achievements.
             </p>
           </div>
