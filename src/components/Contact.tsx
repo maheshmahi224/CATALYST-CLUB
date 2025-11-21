@@ -36,7 +36,7 @@ const Contact = () => {
                   <div className="w-16 h-16 bg-catalyst-teal/10 rounded-full flex items-center justify-center mb-4">
                     <Phone className="h-8 w-8 text-catalyst-teal" />
                   </div>
-                  <h3 className="font-bold text-xl text-gray-100 mb-2">Phone</h3>
+                  <h3 className="font-bold text-xl text-catalyst-cyan glow-text mb-2">Phone</h3>
                   <p className="text-gray-300 text-lg">7386775532</p>
                 </CardContent>
               </Card>
@@ -46,7 +46,7 @@ const Contact = () => {
                   <div className="w-16 h-16 bg-catalyst-cyan/10 rounded-full flex items-center justify-center mb-4">
                     <Mail className="h-8 w-8 text-catalyst-cyan" />
                   </div>
-                  <h3 className="font-bold text-xl text-gray-100 mb-2">Email</h3>
+                  <h3 className="font-bold text-xl text-catalyst-cyan glow-text mb-2">Email</h3>
                   <p className="text-gray-300 break-all text-lg">catalystclubsnti28@gmail.com</p>
                 </CardContent>
               </Card>
@@ -56,7 +56,7 @@ const Contact = () => {
                   <div className="w-16 h-16 bg-catalyst-blue/10 rounded-full flex items-center justify-center mb-4">
                     <Instagram className="h-8 w-8 text-catalyst-blue" />
                   </div>
-                  <h3 className="font-bold text-xl text-gray-100 mb-2">Instagram</h3>
+                  <h3 className="font-bold text-xl text-catalyst-cyan glow-text mb-2">Instagram</h3>
                   <Button 
                     size="lg"
                     variant="outline" 
@@ -73,14 +73,14 @@ const Contact = () => {
                   <div className="w-16 h-16 bg-catalyst-teal/10 rounded-full flex items-center justify-center mb-4">
                     <MapPin className="h-8 w-8 text-catalyst-teal" />
                   </div>
-                  <h3 className="font-bold text-xl text-gray-100 mb-2">Address</h3>
+                  <h3 className="font-bold text-xl text-catalyst-cyan glow-text mb-2">Address</h3>
                   <p className="text-gray-300 text-lg">SCIENT INSTITUTE OF TECHNOLOGY,<br />KHANAPUR, IBRAHIMPATNAM</p>
                 </CardContent>
               </Card>
             </div>
             
             <form className="bg-gray-800 p-8 rounded-xl shadow-lg">
-              <h3 className="text-2xl font-bold text-gray-100 mb-6">Send us a message</h3>
+              <h3 className="text-2xl font-bold text-catalyst-cyan glow-text mb-6">Send us a message</h3>
               <div className="space-y-6">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>

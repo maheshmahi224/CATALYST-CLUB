@@ -86,7 +86,7 @@ const Collaboration = () => {
                       className="w-full h-full object-cover"
                     />
                   </div>
-                  <h4 className="text-xl font-bold text-catalyst-blue mb-2">Dr. G. ANIL KUMAR</h4>
+                  <h4 className="text-xl font-bold text-catalyst-cyan glow-text mb-2">Dr. G. ANIL KUMAR</h4>
                   <p className="text-catalyst-teal font-semibold mb-3">CHAIRPERSON</p>
                   <p className="text-gray-300 text-sm leading-relaxed">
                     Dr. G. Anil Kumar is a distinguished academician who graduated from Osmania University. 
@@ -108,7 +108,7 @@ const Collaboration = () => {
                       className="w-full h-full object-cover"
                     />
                   </div>
-                  <h4 className="text-xl font-bold text-catalyst-blue mb-2">Dr. A. BALARAM</h4>
+                  <h4 className="text-xl font-bold text-catalyst-cyan glow-text mb-2">Dr. A. BALARAM</h4>
                   <p className="text-catalyst-teal font-semibold mb-3">VICE CHAIRPERSON</p>
                   <p className="text-gray-300 text-sm leading-relaxed">
                     Dr. A. Balaram, currently working as a Professor in the Dept. of Computer Science and Engineering 
