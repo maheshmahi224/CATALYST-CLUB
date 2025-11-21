@@ -33,8 +33,8 @@ const Navbar = () => {
   
   return (
     <nav 
-      className={`fixed top-0 w-full z-50 transition-all duration-300 ${
-        isScrolled ? 'bg-white/90 dark:bg-gray-900/90 shadow-md backdrop-blur-sm' : 'bg-transparent'
+      className={`fixed top-0 w-full z-50 transition-all duration-300 text-white ${
+        isScrolled ? 'bg-gray-900/90 shadow-md backdrop-blur-sm' : 'bg-transparent'
       }`}
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -46,7 +46,7 @@ const Navbar = () => {
                 alt="Catalyst Club Logo"
                 className="h-10 w-auto mr-2"
               />
-              <span className="text-xl font-bold text-catalyst-blue dark:text-white">
+              <span className="text-xl font-bold text-white">
                 CATALYST<span className="text-catalyst-teal">CLUB</span>
               </span>
             </a>
@@ -66,7 +66,7 @@ const Navbar = () => {
           <div className="md:hidden flex items-center">
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="inline-flex items-center justify-center p-2 rounded-md text-gray-700 dark:text-gray-300 hover:text-catalyst-teal focus:outline-none"
+              className="inline-flex items-center justify-center p-2 rounded-md text-white hover:text-catalyst-teal focus:outline-none"
             >
               {isOpen ? <X size={24} /> : <Menu size={24} />}
             </button>

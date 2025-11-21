@@ -49,7 +49,7 @@ const Index = () => {
   }, []);
   
   return (
-    <div className="min-h-screen bg-white dark:bg-gray-950">
+    <div className="min-h-screen bg-gray-950 text-white">
       <Navbar />
       <main>
         <ShaderHero />
