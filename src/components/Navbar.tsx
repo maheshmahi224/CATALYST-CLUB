@@ -54,15 +54,6 @@ const Navbar = () => {
           
           <div className="hidden md:flex md:items-center">
             <div className="ml-10 flex items-center space-x-4">
-              {navItems.map((item) => (
-                <a
-                  key={item.name}
-                  href={item.href}
-                  className="px-3 py-2 text-sm font-medium text-gray-800 dark:text-gray-200 hover:text-catalyst-teal dark:hover:text-catalyst-teal transition-colors"
-                >
-                  {item.name}
-                </a>
-              ))}
               <Button 
                 className="bg-gradient-to-r from-catalyst-teal to-catalyst-cyan hover:opacity-90 transition-opacity"
                 onClick={() => window.open('https://docs.google.com/forms/d/e/1FAIpQLSfsHPgxAR_tCcRkTxK27A9m3lt5CFR3eTEKpbZ58nqKAgd0KA/viewform?usp=dialog', '_blank')}
@@ -86,16 +77,6 @@ const Navbar = () => {
       {/* Mobile menu */}
       <div className={`md:hidden ${isOpen ? 'block' : 'hidden'} bg-white dark:bg-gray-900 shadow-lg`}>
         <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-          {navItems.map((item) => (
-            <a
-              key={item.name}
-              href={item.href}
-              onClick={() => setIsOpen(false)}
-              className="block px-3 py-2 rounded-md text-base font-medium text-gray-800 dark:text-gray-200 hover:text-catalyst-teal hover:bg-gray-50 dark:hover:bg-gray-800"
-            >
-              {item.name}
-            </a>
-          ))}
           <Button 
             className="w-full mt-2 bg-gradient-to-r from-catalyst-teal to-catalyst-cyan hover:opacity-90 transition-opacity"
             onClick={() => window.open('https://docs.google.com/forms/d/e/1FAIpQLSfsHPgxAR_tCcRkTxK27A9m3lt5CFR3eTEKpbZ58nqKAgd0KA/viewform?usp=dialog', '_blank')}
