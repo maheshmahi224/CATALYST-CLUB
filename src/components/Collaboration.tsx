@@ -1,18 +1,30 @@
-
 import React from 'react';
+import { motion } from 'framer-motion';
 
 const Collaboration = () => {
   return (
     <section className="py-20 bg-gradient-to-b from-gray-50 to-white">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
+        <motion.div 
+          className="text-center mb-16"
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+        >
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
             <span className="text-catalyst-blue">Catalyst Club & Scient Institute:</span> <span className="text-gradient">Innovating Together</span>
           </h2>
           <div className="w-24 h-1 bg-gradient-to-r from-catalyst-teal to-catalyst-cyan mx-auto mb-6"></div>
-        </div>
+        </motion.div>
         
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <motion.div 
+          className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+        >
           <div className="order-2 lg:order-1">
             <h3 className="text-2xl font-bold text-gray-800 mb-6">A Powerful Collaboration</h3>
             <p className="text-gray-600 mb-6">
@@ -40,11 +52,11 @@ const Collaboration = () => {
                   <h4 className="text-lg font-semibold text-gray-800">Academic Integration</h4>
                   <p className="text-sm text-gray-600">Club activities complement the academic curriculum for holistic education.</p>
                 </div>
-              </div>
             </div>
           </div>
+        </div>
           
-          <div className="order-1 lg:order-2">
+        <div className="order-1 lg:order-2">
             <div className="overflow-hidden rounded-xl shadow-lg hover:shadow-xl transition-shadow">
               <img 
                 src="/lovable-uploads/f748a37e-7eff-4e74-b9cd-a598ffb771a9.png" 
@@ -57,7 +69,7 @@ const Collaboration = () => {
               </div>
             </div>
           </div>
-        </div>
+        </motion.div>
         
         {/* Faculty Leadership Section */}
         <div className="mt-16">

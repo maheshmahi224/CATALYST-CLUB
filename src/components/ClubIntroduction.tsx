@@ -1,18 +1,30 @@
-
 import React from 'react';
 import { Users, Lightbulb, Target } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 const ClubIntroduction = () => {
   return (
     <section className="py-20 bg-white dark:bg-gray-900 transition-colors duration-300">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
+        <motion.div 
+          className="text-center mb-16"
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+        >
           <h2 className="text-3xl md:text-4xl font-bold mb-4">Mahesh & <span className="text-gradient animate-pulse-glow">Team</span></h2>
           <div className="w-24 h-1 bg-gradient-to-r from-catalyst-teal to-catalyst-cyan mx-auto mb-6"></div>
-        </div>
+        </motion.div>
         
         <div className="max-w-4xl mx-auto">
-          <div className="flex flex-col md:flex-row items-center mb-12">
+          <motion.div 
+            className="flex flex-col md:flex-row items-center mb-12"
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+          >
             <div className="md:w-1/3 mb-6 md:mb-0">
               <div className="w-48 h-48 mx-auto rounded-full bg-gradient-to-br from-catalyst-cyan to-catalyst-teal p-1 animate-pulse-glow">
                 <div className="w-full h-full rounded-full bg-white dark:bg-gray-800 flex items-center justify-center overflow-hidden">
@@ -37,9 +49,15 @@ const ClubIntroduction = () => {
                 <span className="text-xs bg-purple-100 text-purple-600 dark:bg-purple-900/30 dark:text-purple-300 px-3 py-1 rounded-full">AI Development</span>
               </div>
             </div>
-          </div>
+          </motion.div>
           
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <motion.div 
+            className="grid grid-cols-1 md:grid-cols-3 gap-8"
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.4, staggerChildren: 0.2 }}
+          >
             <div className="bg-gray-50 dark:bg-gray-800 rounded-xl p-6 hover:shadow-md transition-shadow animate-fade-in hover:-translate-y-1 hover:shadow-lg transition-all duration-300">
               <Users className="h-8 w-8 text-catalyst-teal mb-4" />
               <h4 className="text-xl font-semibold mb-2 dark:text-gray-100">Collaborative Team</h4>
@@ -63,7 +81,7 @@ const ClubIntroduction = () => {
                 Our initiatives are designed with clear objectives and measurable outcomes.
               </p>
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>
