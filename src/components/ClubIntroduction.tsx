@@ -1,17 +1,28 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Users, Lightbulb, Target } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 const ClubIntroduction = () => {
+  const [isMobile, setIsMobile] = useState(false);
+  
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+  
   return (
     <section className="py-20 bg-gray-900 transition-colors duration-300">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div 
           className="text-center mb-16"
-          initial={{ opacity: 0, y: 50 }}
+          initial={{ opacity: 0, y: isMobile ? 20 : 50 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
+          viewport={{ once: true, margin: "-50px" }}
+          transition={{ duration: isMobile ? 0.3 : 0.6 }}
         >
           <h2 className="text-3xl md:text-4xl font-bold mb-4">Mahesh & <span className="text-gradient animate-pulse-glow">Team</span></h2>
           <div className="w-24 h-1 bg-gradient-to-r from-catalyst-teal to-catalyst-cyan mx-auto mb-6"></div>
@@ -20,10 +31,10 @@ const ClubIntroduction = () => {
         <div className="max-w-4xl mx-auto">
           <motion.div 
             className="flex flex-col md:flex-row items-center mb-12"
-            initial={{ opacity: 0, scale: 0.9 }}
+            initial={{ opacity: 0, scale: isMobile ? 1 : 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.2 }}
+            viewport={{ once: true, margin: "-50px" }}
+            transition={{ duration: isMobile ? 0.3 : 0.6, delay: isMobile ? 0 : 0.2 }}
           >
             <div className="md:w-1/3 mb-6 md:mb-0">
               <div className="w-48 h-48 mx-auto rounded-full bg-gradient-to-br from-catalyst-cyan to-catalyst-teal p-1 animate-pulse-glow">

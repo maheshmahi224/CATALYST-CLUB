@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from 'lucide-react';
 import FlipCard from './FlipCard';
@@ -6,6 +6,16 @@ import { motion } from 'framer-motion';
 
 const Events = () => {
   const [activeTab, setActiveTab] = useState('upcoming');
+  const [isMobile, setIsMobile] = useState(false);
+  
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
   
   const events = {
     upcoming: [
@@ -48,10 +58,10 @@ const Events = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div 
           className="text-center mb-16"
-          initial={{ opacity: 0, y: 50 }}
+          initial={{ opacity: 0, y: isMobile ? 20 : 50 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
+          viewport={{ once: true, margin: "-50px" }}
+          transition={{ duration: isMobile ? 0.3 : 0.6 }}
         >
           <h2 className="text-3xl md:text-4xl font-bold mb-4">MODULE 1 - <span className="text-gradient glow-text">VIBE CODING</span></h2>
           <div className="w-24 h-1 bg-gradient-to-r from-catalyst-teal to-catalyst-cyan mx-auto mb-6 animate-pulse-glow"></div>
@@ -90,16 +100,16 @@ const Events = () => {
             className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
+            viewport={{ once: true, margin: "-50px" }}
+            transition={{ duration: isMobile ? 0.3 : 0.6 }}
           >
             {events.upcoming.map((event, index) => (
               <motion.div 
                 key={event.id}
-                initial={{ opacity: 0, y: 50 }}
+                initial={{ opacity: 0, y: isMobile ? 10 : 50 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
+                viewport={{ once: true, margin: "-50px" }}
+                transition={{ duration: isMobile ? 0.25 : 0.5, delay: isMobile ? 0 : index * 0.1 }}
                 className="hover-scale"
               >
                 <FlipCard
