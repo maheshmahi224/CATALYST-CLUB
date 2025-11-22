@@ -219,4 +219,20 @@
       filter: drop-shadow(0 0 15px rgba(6, 182, 212, 0.8));
     }
   }
+  
+  /* Mobile Performance Optimizations */
+  @media (max-width: 768px) {
+    * {
+      -webkit-tap-highlight-color: transparent;
+    }
+    
+    body {
+      touch-action: pan-y;
+      overflow-x: hidden;
+    }
+    
+    img {
+      image-rendering: -webkit-optimize-contrast;
+    }
+  }
 }

@@ -1,7 +1,18 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 
 const About = () => {
+  const [isMobile, setIsMobile] = useState(false);
+  
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+
   const features = [{
     title: 'Workshops & Training',
     description: 'AI, Web Development, Blockchain, IoT and other emerging technologies.',
@@ -24,10 +35,10 @@ const About = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div 
           className="text-center mb-16"
-          initial={{ opacity: 0, y: 50 }}
+          initial={{ opacity: 0, y: isMobile ? 20 : 50 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
+          viewport={{ once: true, margin: "-50px" }}
+          transition={{ duration: isMobile ? 0.3 : 0.6 }}
         >
           <h2 className="text-3xl md:text-4xl font-bold mb-4">About <span className="text-gradient glow-text animate-pulse">Catalyst Club</span></h2>
           <div className="w-24 h-1 bg-gradient-to-r from-catalyst-teal to-catalyst-cyan mx-auto mb-6"></div>
@@ -39,10 +50,10 @@ const About = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           <motion.div 
             className="flex flex-col space-y-6"
-            initial={{ opacity: 0, x: -50 }}
+            initial={{ opacity: 0, x: isMobile ? 0 : -50 }}
             whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.2 }}
+            viewport={{ once: true, margin: "-50px" }}
+            transition={{ duration: isMobile ? 0.3 : 0.6, delay: isMobile ? 0 : 0.2 }}
           >
             <p className="text-gray-300 animate-fade-in">
               Catalyst Club is more than just a platform—it's a movement designed to inspire, educate, and empower students to explore the realms of technology, creativity, and self-development beyond the boundaries of traditional academics.
@@ -77,10 +88,10 @@ const About = () => {
 
           <motion.div 
             className="grid grid-cols-1 sm:grid-cols-2 gap-6"
-            initial={{ opacity: 0, x: 50 }}
+            initial={{ opacity: 0, x: isMobile ? 0 : 50 }}
             whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.4 }}
+            viewport={{ once: true, margin: "-50px" }}
+            transition={{ duration: isMobile ? 0.3 : 0.6, delay: isMobile ? 0 : 0.4 }}
           >
             {features.map((feature, index) => (
               <div 

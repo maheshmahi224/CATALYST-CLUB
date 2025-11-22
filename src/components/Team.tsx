@@ -1,9 +1,18 @@
-
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Github, Linkedin, Mail, Instagram } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 const Team = () => {
+  const [isMobile, setIsMobile] = useState(false);
+  
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
   const maheshTeam = [
     {
       name: "Mahesh",
@@ -52,10 +61,10 @@ const Team = () => {
         {/* Mahesh & Team Section */}
         <motion.div 
           className="text-center mb-16"
-          initial={{ opacity: 0, y: 50 }}
+          initial={{ opacity: 0, y: isMobile ? 20 : 50 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
+          viewport={{ once: true, margin: "-50px" }}
+          transition={{ duration: isMobile ? 0.3 : 0.6 }}
         >
           <h2 className="text-3xl md:text-4xl font-bold mb-4">OUR <span className="text-gradient glow-text animate-pulse">TEAM</span></h2>
           <div className="w-24 h-1 bg-gradient-to-r from-catalyst-teal to-catalyst-cyan mx-auto mb-6"></div>
@@ -67,10 +76,10 @@ const Team = () => {
         {/* Mahesh Card */}
         <motion.div 
           className="flex justify-center mb-16"
-          initial={{ opacity: 0, scale: 0.9 }}
+          initial={{ opacity: 0, scale: isMobile ? 1 : 0.9 }}
           whileInView={{ opacity: 1, scale: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.2 }}
+          viewport={{ once: true, margin: "-50px" }}
+          transition={{ duration: isMobile ? 0.3 : 0.6, delay: isMobile ? 0 : 0.2 }}
         >
           {maheshTeam.map((member, index) => (
             <div 
@@ -113,10 +122,10 @@ const Team = () => {
         {/* Team Members Grid */}
         <motion.div 
           className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8"
-          initial={{ opacity: 0, y: 50 }}
+          initial={{ opacity: 0, y: isMobile ? 20 : 50 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.4 }}
+          viewport={{ once: true, margin: "-50px" }}
+          transition={{ duration: isMobile ? 0.3 : 0.6, delay: isMobile ? 0 : 0.4 }}
         >
           {teamMembers.map((member, index) => (
             <div 
@@ -159,10 +168,10 @@ const Team = () => {
         <motion.div 
           className="text-center mt-12 animate-fade-in" 
           style={{animationDelay: "0.6s"}}
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: isMobile ? 10 : 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.6 }}
+          viewport={{ once: true, margin: "-50px" }}
+          transition={{ duration: isMobile ? 0.3 : 0.6, delay: isMobile ? 0 : 0.6 }}
         >
           <p className="text-gray-300 mb-4">Want to be part of our dynamic team?</p>
           <button 

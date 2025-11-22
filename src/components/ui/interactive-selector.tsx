@@ -11,6 +11,16 @@ interface Option {
 const InteractiveSelector = () => {
   const [activeIndex, setActiveIndex] = useState(0);
   const [animatedOptions, setAnimatedOptions] = useState<number[]>([]);
+  const [isMobile, setIsMobile] = useState(false);
+  
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
   
   const options: Option[] = [
     {
@@ -46,6 +56,12 @@ const InteractiveSelector = () => {
   };
 
   useEffect(() => {
+    if (isMobile) {
+      // Instantly show all on mobile for better performance
+      setAnimatedOptions(options.map((_, i) => i));
+      return;
+    }
+    
     const timers: NodeJS.Timeout[] = [];
     
     options.forEach((_, i) => {
@@ -58,7 +74,7 @@ const InteractiveSelector = () => {
     return () => {
       timers.forEach(timer => clearTimeout(timer));
     };
-  }, []);
+  }, [isMobile]);
 
   return (
     <div className="relative flex flex-col items-center justify-center min-h-[600px] bg-gray-900 font-sans text-white py-12"> 
@@ -74,14 +90,13 @@ const InteractiveSelector = () => {
           <div
             key={index}
             className={`
-              option relative flex flex-col justify-end overflow-hidden transition-all duration-700 ease-in-out
+              option relative flex flex-col justify-end overflow-hidden ease-in-out
               ${activeIndex === index ? 'active' : ''}
             `}
             style={{
               backgroundImage: `url('${option.image}')`,
               backgroundSize: activeIndex === index ? 'auto 100%' : 'auto 120%',
               backgroundPosition: 'center',
-              backfaceVisibility: 'hidden',
               opacity: animatedOptions.includes(index) ? 1 : 0,
               transform: animatedOptions.includes(index) ? 'translateX(0)' : 'translateX(-60px)',
               minWidth: '60px',
@@ -103,19 +118,21 @@ const InteractiveSelector = () => {
               justifyContent: 'flex-end',
               position: 'relative',
               overflow: 'hidden',
-              willChange: 'flex-grow, box-shadow, background-size, background-position'
+              transition: isMobile ? 'all 0.4s ease-in-out' : 'all 0.7s ease-in-out',
+              willChange: activeIndex === index ? 'flex-grow' : 'auto'
             }}
             onClick={() => handleOptionClick(index)}
           >
             {/* Shadow effect */}
             <div 
-              className="shadow absolute left-0 right-0 pointer-events-none transition-all duration-700 ease-in-out"
+              className="shadow absolute left-0 right-0 pointer-events-none ease-in-out"
               style={{
                 bottom: activeIndex === index ? '0' : '-40px',
                 height: '120px',
                 boxShadow: activeIndex === index 
                   ? 'inset 0 -120px 120px -120px #000, inset 0 -120px 120px -80px #000' 
-                  : 'inset 0 -120px 0px -120px #000, inset 0 -120px 0px -80px #000'
+                  : 'inset 0 -120px 0px -120px #000, inset 0 -120px 0px -80px #000',
+                transition: isMobile ? 'all 0.4s ease-in-out' : 'all 0.7s ease-in-out'
               }}
             ></div>
             
@@ -126,19 +143,21 @@ const InteractiveSelector = () => {
               </div>
               <div className="info text-white whitespace-pre relative">
                 <div 
-                  className="main font-bold text-lg transition-all duration-700 ease-in-out"
+                  className="main font-bold text-lg ease-in-out"
                   style={{
                     opacity: activeIndex === index ? 1 : 0,
-                    transform: activeIndex === index ? 'translateX(0)' : 'translateX(25px)'
+                    transform: activeIndex === index ? 'translateX(0)' : 'translateX(25px)',
+                    transition: isMobile ? 'all 0.4s ease-in-out' : 'all 0.7s ease-in-out'
                   }}
                 >
                   {option.title}
                 </div>
                 <div 
-                  className="sub text-base text-gray-300 transition-all duration-700 ease-in-out"
+                  className="sub text-base text-gray-300 ease-in-out"
                   style={{
                     opacity: activeIndex === index ? 1 : 0,
-                    transform: activeIndex === index ? 'translateX(0)' : 'translateX(25px)'
+                    transform: activeIndex === index ? 'translateX(0)' : 'translateX(25px)',
+                    transition: isMobile ? 'all 0.4s ease-in-out' : 'all 0.7s ease-in-out'
                   }}
                 >
                   {option.description}
