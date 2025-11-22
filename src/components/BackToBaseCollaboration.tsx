@@ -20,41 +20,13 @@ export default function BackToBaseCollaboration() {
             Catalyst Club × Back to Base
           </h2>
           
-          <p className="text-xl md:text-2xl font-semibold text-catalyst-teal dark:text-catalyst-cyan">
+          <p className="text-xl md:text-2xl font-semibold text-catalyst-teal dark:text-catalyst-cyan mt-4">
             Private Event Partner for Legends Upgrade — AI with Clarity
           </p>
           
-          <div className="max-w-2xl mx-auto space-y-4 text-neutral-700 dark:text-neutral-300">
-            <p className="text-base md:text-lg">
-              This collaboration brings together two forces focused on transforming student innovation into real-world impact, enabling a more powerful and structured learning ecosystem.
-            </p>
-            
-            <div className="pt-4 space-y-3 text-left">
-              <p className="text-base font-medium text-neutral-800 dark:text-white">
-                Back to Base joins the mission with a shared vision:
-              </p>
-              <ul className="space-y-2 pl-6">
-                <li className="flex items-start">
-                  <span className="text-catalyst-cyan mr-2">•</span>
-                  <span>Empowering students through real technological exposure</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-catalyst-cyan mr-2">•</span>
-                  <span>Creating opportunities beyond classrooms</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-catalyst-cyan mr-2">•</span>
-                  <span>Building a culture of innovation driven by clarity, execution, and results</span>
-                </li>
-              </ul>
-            </div>
-            
-            <p className="text-base md:text-lg pt-4 font-medium italic text-neutral-800 dark:text-white">
-              Together, Catalyst Club and Back to Base are set to deliver a high-impact experience that merges intelligence, creativity, and future-ready skill development.
-            </p>
-            
-            <p className="text-xl font-bold text-catalyst-teal dark:text-catalyst-cyan pt-2">
-              The upgrade begins now.
+          <div className="max-w-2xl mx-auto pt-6">
+            <p className="text-lg md:text-xl text-neutral-700 dark:text-neutral-300 leading-relaxed">
+              Transforming student innovation into real-world impact through a powerful and structured learning ecosystem.
             </p>
           </div>
         </motion.div>
