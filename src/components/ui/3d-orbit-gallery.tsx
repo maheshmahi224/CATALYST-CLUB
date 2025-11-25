@@ -20,7 +20,7 @@ export function ParticleSphere({ onImageClick }: ParticleSphereProps) {
   const PARTICLE_OPACITY = 1
 
   const IMAGE_COUNT = 10
-  const IMAGE_SIZE = 1.5 
+  const IMAGE_SIZE = 2.5
 
   const groupRef = useRef<THREE.Group>(null)
 
@@ -123,26 +123,42 @@ export function ParticleSphere({ onImageClick }: ParticleSphereProps) {
       ))}
 
       {orbitingImages.map((image, index) => (
-        <mesh 
+        <group 
           key={`image-${index}`} 
           position={image.position as [number, number, number]} 
           rotation={image.rotation as [number, number, number]}
-          onClick={(e: ThreeEvent<MouseEvent>) => {
-            e.stopPropagation();
-            onImageClick(index);
-          }}
-          onPointerOver={(e: ThreeEvent<PointerEvent>) => {
-            e.stopPropagation();
-            document.body.style.cursor = 'pointer';
-          }}
-          onPointerOut={(e: ThreeEvent<PointerEvent>) => {
-            e.stopPropagation();
-            document.body.style.cursor = 'default';
-          }}
         >
-          <planeGeometry args={[IMAGE_SIZE, IMAGE_SIZE]} />
-          <meshBasicMaterial map={textures[image.textureIndex]} opacity={1} side={THREE.DoubleSide} />
-        </mesh>
+          {/* Rounded background/border */}
+          <mesh
+            scale={[1.05, 1.05, 1]}
+          >
+            <planeGeometry args={[IMAGE_SIZE, IMAGE_SIZE, 32, 32]} />
+            <meshBasicMaterial 
+              color="#ffffff" 
+              side={THREE.DoubleSide}
+            />
+          </mesh>
+          
+          {/* Main image with rounded appearance */}
+          <mesh
+            position={[0, 0, 0.01]}
+            onClick={(e: ThreeEvent<MouseEvent>) => {
+              e.stopPropagation();
+              onImageClick(index);
+            }}
+            onPointerOver={(e: ThreeEvent<PointerEvent>) => {
+              e.stopPropagation();
+              document.body.style.cursor = 'pointer';
+            }}
+            onPointerOut={(e: ThreeEvent<PointerEvent>) => {
+              e.stopPropagation();
+              document.body.style.cursor = 'default';
+            }}
+          >
+            <planeGeometry args={[IMAGE_SIZE * 0.95, IMAGE_SIZE * 0.95, 32, 32]} />
+            <meshBasicMaterial map={textures[image.textureIndex]} side={THREE.DoubleSide} />
+          </mesh>
+        </group>
       ))}
     </group>
   )
