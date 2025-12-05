@@ -10,7 +10,7 @@ interface SEOProps {
 }
 
 const SEO = ({ title, description, keywords, image, url, noindex = false }: SEOProps) => {
-    const siteUrl = "https://catalystclubwebsite.vercel.app";
+    const siteUrl = "https://catalystclub.vercel.app";
     const fullUrl = url ? `${siteUrl}${url}` : siteUrl;
 
     return (
