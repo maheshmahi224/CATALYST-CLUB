@@ -1,5 +1,6 @@
 
 import React, { useEffect } from 'react';
+import SEO from '@/components/SEO';
 import Navbar from '@/components/Navbar';
 import ShaderHero from '@/components/ShaderHero';
 import About from '@/components/About';
@@ -17,13 +18,13 @@ const Index = () => {
   useEffect(() => {
     // Smooth scroll for anchor links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function(e) {
+      anchor.addEventListener('click', function (e) {
         e.preventDefault();
         const targetId = this.getAttribute('href');
         if (!targetId) return;
-        
+
         const targetElement = document.querySelector(targetId);
-        
+
         if (targetElement) {
           const top = targetElement.getBoundingClientRect().top + window.pageYOffset - 80;
           window.scrollTo({
@@ -33,7 +34,7 @@ const Index = () => {
         }
       });
     });
-    
+
     // Check if URL has hash and scroll to that section
     if (window.location.hash) {
       const targetElement = document.querySelector(window.location.hash);
@@ -48,9 +49,15 @@ const Index = () => {
       }
     }
   }, []);
-  
+
   return (
     <div className="min-h-screen bg-gray-950 text-white">
+      <SEO
+        title="Catalyst Club - Innovation, Collaboration & Tech Events"
+        description="Welcome to Catalyst Club. We bring together innovators, creators, and tech enthusiasts. Explore our events, workshops, and collaborations."
+        keywords="Catalyst Club, Technology, Innovation, Events, Gallery, Team"
+        url="/"
+      />
       <Navbar />
       <main>
         <ShaderHero />
